@@ -21,7 +21,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 ##直播发布特性
 * H.264/AAC 组合的RTMP协议音视频流发布
 * 全屏视频采集，720p原画质缩放
-* NEON/SSE指令集优化H.264软件编码器，性能强劲，兼容性极强
+* NEON指令集优化H.264软件编码器，性能强劲，兼容性极强
 * H.264支持Baseline及Main profile
 * 视频支持横屏16:9，竖屏9:16分辨率自动原画旋转
 * NEON优化AAC软件编码器，极少CPU占用，支持LC和HE profile，音质还原效果好
@@ -34,7 +34,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 
 ##直播播放特性
 * 只为RTMP协议优化的码流解析器，极短的分析时间，秒开RTMP视频流
-* NEON/SSE指令集优化的软件解码器，性能好，兼容性强
+* NEON指令集优化的软件解码器，性能好，兼容性强
 * 支持的视频解码器:H.264, FLV, VP6
 * 支持的音频解码器:AAC, MP3, SPEEX, NELLYMOSER, ADPCM_SWF, G.711
 * OpenGL ES视频渲染
