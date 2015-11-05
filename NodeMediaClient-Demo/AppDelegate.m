@@ -18,11 +18,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    //设置音频会话
-     AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-    [session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
-    [session setActive:YES error:nil];   
+     //设置音频会话
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionDefaultToSpeaker error:nil];
+    [session setActive:YES error:nil];
     return YES;
 }
 
