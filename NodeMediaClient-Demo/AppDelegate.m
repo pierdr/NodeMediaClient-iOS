@@ -19,11 +19,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     //设置音频会话
-    AVAudioSession *session = [AVAudioSession sharedInstance];
+     AVAudioSession *session = [AVAudioSession sharedInstance];
     [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-    UInt32 audioRouteOverride = kAudioSessionOverrideAudioRoute_Speaker;
-    AudioSessionSetProperty(kAudioSessionProperty_OverrideAudioRoute, sizeof(audioRouteOverride), &audioRouteOverride);
-    [session setActive:YES error:nil];    
+    [session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
+    [session setActive:YES error:nil];   
     return YES;
 }
 
