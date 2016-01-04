@@ -31,6 +31,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 * 支持全时自动对焦
 * 支持单音频流发布
 * 支持发布中途来电保持网络流，暂停发布，挂机后继续发布
+* 支持预览摄像头后,任意时刻截图
 
 ##直播播放特性
 * 只为RTMP协议优化的码流解析器，极短的分析时间，秒开RTMP视频流
@@ -40,6 +41,8 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 * OpenGL ES视频渲染
 * 全自动重连
 * 支持播放中途来电保持网络流，暂停播放，挂机后继续播放
+* 支持播放中途任意时刻截图
+* 支持设置最大缓冲时长
 
 ##双向音视频？
 支持一个页面内同时发布视频和播放视频，但由于有回音问题，建议这种应用使用耳机，后期的版本会考虑回音消除
