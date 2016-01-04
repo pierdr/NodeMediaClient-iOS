@@ -1,6 +1,6 @@
 //
 //  LivePlayer.h
-//  NodeMediaClient v0.5.1
+//  NodeMediaClient v0.5.2
 //
 //  Created by Mingliang Chen on 15/8/21.
 //  Copyright (c) 2015年 NodeMedia. All rights reserved.
@@ -22,12 +22,14 @@
 
 @interface LivePlayer : NSObject
 
-@property (nonatomic) int bufferTime; //本地播放缓冲时长 单位毫秒
+@property (nonatomic) int bufferTime;
+@property (nonatomic) int maxBufferTime;
 @property (nonatomic, weak) id<LivePlayerDelegate> livePlayerDelegate;
 
 -(int) setUIView:(UIView*)playVideoView ContentMode:(UIViewContentMode)contentMode;
 -(int) startPlay:(NSString*)rtmpUrl;
 -(int) startPlayRtmpUrl:(NSString*)rtmpUrl pageUrl:(NSString*)pageUrl swfUrl:(NSString*)swfUrl;
 -(int) stopPlay;
--(void) didActive:(bool)active;
+-(BOOL) capturePicture:(NSString*)filePath;
+-(int) getBufferLength;
 @end
