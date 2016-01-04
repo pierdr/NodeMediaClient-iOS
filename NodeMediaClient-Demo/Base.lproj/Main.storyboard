@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CDK-Ru-Ck3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CDK-Ru-Ck3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -20,16 +20,13 @@
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Upm-jN-X8c">
                                 <rect key="frame" x="0.0" y="80" width="160" height="286"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PHL-LV-QdU" customClass="CamPreviewView">
                                 <rect key="frame" x="160" y="80" width="160" height="286"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="jOc-zE-Bui"/>
@@ -62,7 +59,6 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9g-pC-qod" userLabel="FlashButton">
                                                 <rect key="frame" x="268" y="21" width="44" height="44"/>
-                                                <animations/>
                                                 <state key="normal" image="SwitchFlash_off">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -72,7 +68,6 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMZ-Qf-B8T" userLabel="SwitchButton">
                                                 <rect key="frame" x="8" y="21" width="44" height="44"/>
-                                                <animations/>
                                                 <state key="normal" image="SwitchCamera">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -82,7 +77,6 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odl-aW-WYM" userLabel="StartButton" customClass="KSHCaptureButton">
                                                 <rect key="frame" x="126" y="9" width="68" height="68"/>
-                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="68" id="7Ck-va-JQ6"/>
                                                     <constraint firstAttribute="height" constant="68" id="iux-rj-c3s"/>
@@ -95,7 +89,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="0.5" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="centerY" secondItem="Odl-aW-WYM" secondAttribute="centerY" id="2Id-be-I3Y"/>
@@ -108,7 +101,6 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="V1t-v7-wmd" secondAttribute="trailing" id="8gc-bJ-58t"/>
@@ -117,7 +109,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="TF3-O5-OTm" secondAttribute="bottom" id="Tdw-Ev-cIp"/>
@@ -126,7 +117,18 @@
                             <constraint firstItem="TF3-O5-OTm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pRd-Yr-neL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="K9t-sQ-AIV"/>
+                    <navigationItem key="navigationItem" id="K9t-sQ-AIV">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="IvO-sC-ozW">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Dry-G8-9rt">
+                                <rect key="frame" x="233" y="7" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cap"/>
+                                <connections>
+                                    <action selector="capAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aW1-Ae-Bfo"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cameraPreviewView" destination="TF3-O5-OTm" id="tmF-9G-SIx"/>
                         <outlet property="flashBtn" destination="J9g-pC-qod" id="ct0-QY-2kR"/>
@@ -137,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1394" y="321"/>
+            <point key="canvasLocation" x="1400" y="419"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lig-C1-0Io">
@@ -146,7 +148,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mhh-s2-jfO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="WjF-sw-V3u" kind="relationship" relationship="rootViewController" id="JV5-G3-Mca"/>
@@ -170,20 +171,17 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="播放地址：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dj-eD-pzK">
                                 <rect key="frame" x="16" y="72" width="85" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rtmp://192.168.0.10/live/sample" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="npy-F1-QeS">
                                 <rect key="frame" x="16" y="101" width="314" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qM-AZ-u8v">
                                 <rect key="frame" x="16" y="139" width="288" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Run LivePlayer Demo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -194,20 +192,17 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="发布地址：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fs-nk-jZJ">
                                 <rect key="frame" x="16" y="177" width="85" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rtmp://192.168.0.10/live/stream" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K1B-uW-1mg">
                                 <rect key="frame" x="16" y="206" width="288" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MuE-n3-uDp">
                                 <rect key="frame" x="16" y="244" width="288" height="34"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Run LivePubliser Demo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -217,7 +212,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="NodeMediaClient Demo" id="9j2-MG-0GO"/>
@@ -244,11 +238,9 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nw1-Ke-oT7" userLabel="PlayVideoView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Nw1-Ke-oT7" secondAttribute="bottom" id="3P7-7N-dV8"/>
@@ -257,7 +249,18 @@
                             <constraint firstAttribute="trailing" secondItem="Nw1-Ke-oT7" secondAttribute="trailing" id="zJQ-6f-rmR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Eg7-TT-uUA"/>
+                    <navigationItem key="navigationItem" id="Eg7-TT-uUA">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="PRR-sG-1RW">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Gqj-HC-Gmb">
+                                <rect key="frame" x="233" y="7" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cap"/>
+                                <connections>
+                                    <action selector="capAction:" destination="pvz-L5-8dJ" eventType="touchUpInside" id="JpZ-Oc-6uM"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="playVideoView" destination="Nw1-Ke-oT7" id="64P-NF-iid"/>
                     </connections>
