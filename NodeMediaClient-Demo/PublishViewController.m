@@ -79,7 +79,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 
-    dispatch_async(dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_queue_create("close_dispatch",0), ^{
         //停止预览，停止发布
         [_lp stopPreview];
         [_lp stopPublish];

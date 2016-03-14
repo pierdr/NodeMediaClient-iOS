@@ -45,30 +45,29 @@
     
     
     //4.设置启动缓冲时长 单位毫秒,此参数关系视频流连接成功开始获取数据后缓冲多少毫秒后开始播放
-    [_lp setBufferTime:300];
-    
+    [_lp setBufferTime:1000];
     //4.设置最大缓冲时长 单位毫秒,此参数关系视频最大缓冲时长.RTMP基于TCP协议不丢包,网络抖动且缓冲区播完,之后仍然会接受到抖动期的过期数据包.
     //设置此参数,可以加快播放超出的部分,追上直播发布者的时间线
-    [_lp setMaxBufferTime:1000];
+    [_lp setMaxBufferTime:2000];
     
     //5.开始播放 异步操作,调用后即返回,播放状态由LivePlayerDelegate回调.
     //v0.4版本后支持软件解码H.264+AAC的HLS协议
     [_lp startPlay:[[DefConfig sharedInstance] getPlayUrl]];
-    
+
     
     // 每200毫秒获取一次bufferLength做缓冲调试
-    //    dispatch_async(dispatch_queue_create("buffer_length_dispatch",DISPATCH_QUEUE_SERIAL), ^{
-    //        while(_lp != nil) {
-    //            NSLog(@"BufferLength:%d",[_lp getBufferLength]);
-    //            usleep(200000);
-    //        }
-    //    });
+//    dispatch_async(dispatch_queue_create("buffer_length_dispatch",DISPATCH_QUEUE_SERIAL), ^{
+//        while(_lp != nil) {
+//            NSLog(@"BufferLength:%d",[_lp getBufferLength]);
+//            usleep(200000);
+//        }
+//    });
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    dispatch_async(dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_queue_create("close_dispatch",0), ^{
         if(_lp) {
             [_lp stopPlay]; //停止播放,同步操作,所有线程退出后返回,有一定等待时间
             _lp = nil;      //释放LivePlayer对象

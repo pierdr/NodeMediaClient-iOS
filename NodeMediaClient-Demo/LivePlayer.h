@@ -1,6 +1,6 @@
 //
 //  LivePlayer.h
-//  NodeMediaClient v0.5.2
+//  NodeMediaClient v0.5.3
 //
 //  Created by Mingliang Chen on 15/8/21.
 //  Copyright (c) 2015年 NodeMedia. All rights reserved.
@@ -8,10 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
-#define PLAY_MODE_LINEAL  0
-#define PLAY_MODE_REALTIME  1
-
 
 @protocol LivePlayerDelegate
 
