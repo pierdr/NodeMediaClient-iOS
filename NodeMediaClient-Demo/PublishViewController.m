@@ -148,6 +148,12 @@
             case 2005:
                 //发布中遇到网络异常
                 break;
+            case 2100:
+                //发布端网络阻塞，已缓冲了2秒的数据在队列中
+                break;
+            case 2101:
+                //发布端网络恢复畅通
+                break;
             default:
                 break;
         }
@@ -176,13 +182,14 @@
         //也可用在明确需要横屏16:9 的视频发布 但用户锁定了手机方向旋转，设置参数为：VIDEO_ORI_LANDSCAPE 或 VIDEO_ORI_LANDSCAPE_REVERSE 并提示用户横屏握手机
 //        [_lp setVideoOrientation:VIDEO_ORI_LANDSCAPE];
         
+//        _lp.pageUrl = @"http://www.pageurl.com";
+//        _lp.swfUrl = @"http://www.swfurl.com";
+        
+//        _lp.publishType = PUBLISH_TYPE_RECORD;    //设置为发布录制模式 fms与red5兼容
         
         //开始发布 普通模式
         [_lp startPublish:[[DefConfig sharedInstance] getPublishUrl]];
         
-        
-        //开始发布 需要验证pageUrl swfUrl的发布模式
-//        [_lp startPublishRtmpUrl:[[DefConfig sharedInstance] getPublishUrl] pageUrl:@"http://www.example.com/pageurl" swfUrl:@"http://http://www.exmple.com/pageurl/swfurl.swf"];
     }
 }
 

@@ -1,6 +1,6 @@
 //
 //  LivePublisher.h
-//  NodeMediaClient v0.5.3
+//  NodeMediaClient v0.5.4
 //
 //  Created by Mingliang Chen on 15/8/21.
 //  Copyright (c) 2015年 NodeMedia. All rights reserved.
@@ -24,6 +24,15 @@
 #define VIDEO_ORI_PORTRAIT_REVERSE 2    //Home 键在上的 竖屏 9:16 方向
 #define VIDEO_ORI_LANDSCAPE_REVERSE 3   //Home 键在左的 横屏 16:9 方向
 
+/*
+ * RTMP Publishing Type 
+ * rtmp_specification_1.0.pdf 
+ * 7.2.2.6. publish
+ */
+#define PUBLISH_TYPE_LIVE 0             //rtmp 发布类型 'live'  默认值 不设置就为该值
+#define PUBLISH_TYPE_RECORD 1           //rtmp 发布类型 'record'
+#define PUBLISH_TYPE_APPEND 2           //rtmp 发布类型 'append'
+
 @protocol LivePublisherDelegate
 
 -(void) onEventCallback:(int)event msg:(NSString*)msg;
@@ -37,6 +46,9 @@
 @interface LivePublisher : NSObject
 
 @property (nonatomic, weak) id<LivePublisherDelegate> livePublisherDelegate;
+@property (nonatomic, strong) NSString *pageUrl;
+@property (nonatomic, strong) NSString *swfUrl;
+@property (nonatomic) int publishType;
 
 -(int) setAudioParamBitrate:(int)bitrate aacProfile:(int)aacProfile;
 -(int) setVideoParamWidth:(int)width height:(int)height fps:(int)fps bitrate:(int)bitrate avcProfile:(int)avcProfile;
@@ -46,7 +58,6 @@
 -(int) stopPreview;
 -(int) switchCamera;
 -(int) startPublish:(NSString*)rtmpUrl;
--(int) startPublishRtmpUrl:(NSString*)rtmpUrl pageUrl:(NSString*)pageUrl swfUrl:(NSString*)swfUrl;
 -(int) stopPublish;
 -(int) setDenoiseEnable:(BOOL)denoise;
 -(int) setMicEnable:(BOOL)micEnable;

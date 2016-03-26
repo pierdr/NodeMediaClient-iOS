@@ -50,7 +50,13 @@
     //设置此参数,可以加快播放超出的部分,追上直播发布者的时间线
     [_lp setMaxBufferTime:2000];
     
-    //5.开始播放 异步操作,调用后即返回,播放状态由LivePlayerDelegate回调.
+    //5.设置是否接收音视频流  参考 rtmp_specification_1.0.pdf 7.2.2.4. & 7.2.2.5.
+    //默认都为true 如不需要可以不设置该值
+    //注意： 目前测试了fms和red5支持该参数设定有效，欢迎测试补充
+//    _lp.receiveAudio = true;
+//    _lp.receiveVideo = false;
+    
+    //6.开始播放 异步操作,调用后即返回,播放状态由LivePlayerDelegate回调.
     //v0.4版本后支持软件解码H.264+AAC的HLS协议
     [_lp startPlay:[[DefConfig sharedInstance] getPlayUrl]];
 
@@ -97,18 +103,16 @@
             break;
         case 1002:
             //播放流连接失败
-            //流地址不存在，或者本地网络无法和服务端通信，回调这里。5秒后重连， 可停止
-//            [_lp stopPlay];
             break;
         case 1003:
             //播放流连接失败或播放过程中网络异常断开,进入自动重连
-//            [_lp stopPlay]; //全自动重连总开关
+//            [_lp stopPlay];
             break;
         case 1004:
             //播放停止 所有资源处于可释放状态.
             break;
         case 1005:
-            //播放中途网络异常，回调这里。1秒后重连，如不需要，可停止
+            //播放中遇到网络异常
 //            [_lp stopPlay];
             break;
         case 1100:
@@ -121,10 +125,8 @@
             //NetStream.Buffer.Full         数据缓冲足够 开始播放
             break;
         case 1103:
-            //播放客户端明确收到服务端发送来的 StreamEOF 和 NetStream.Play.UnpublishNotify时回调这里
-            //收到本事件，说明：此流的发布者明确停止了发布，或者因发布者网络异常被服务端明确关闭了流.
-            //本sdk仍然会继续在1秒后重连，如不需要，可停止
-            [_lp stopPlay];
+            //收到 Stream EOF 或者 NetStream.Play.UnpublishNotify
+//            [_lp stopPlay];
             break;
         default:
             break;
