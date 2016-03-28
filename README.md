@@ -7,7 +7,7 @@ NodeMediaClient是为移动端应用量身打造的基于RTMP协议的流媒体�
 **xcode** 7以上
 
 ##支持的系统平台
-**iOS** 6.0及以上 已适配9.1
+**iOS** 7.0及以上
 
 ##支持的CPU架构
 **iOS** armv7 armv7s arm64 i386 x86_64  
