@@ -1,6 +1,6 @@
 //
 //  LivePublisher.h
-//  NodeMediaClient v0.5.4
+//  NodeMediaClient v1.0.0
 //
 //  Created by Mingliang Chen on 15/8/21.
 //  Copyright (c) 2015年 NodeMedia. All rights reserved.
@@ -39,9 +39,6 @@
 
 @end
 
-@interface CamPreviewView : UIView
-
-@end
 
 @interface LivePublisher : NSObject
 
@@ -54,7 +51,7 @@
 -(int) setVideoParamWidth:(int)width height:(int)height fps:(int)fps bitrate:(int)bitrate avcProfile:(int)avcProfile;
 -(int) setCameraOrientation:(UIInterfaceOrientation)ori;
 -(int) setVideoOrientation:(int)ori;
--(int) startPreview:(CamPreviewView*)preview interfaceOrientation:(UIInterfaceOrientation)ori camId:(int)camId;
+-(int) startPreview:(UIView*)preview camId:(int)camId frontMirror:(BOOL)mirror;
 -(int) stopPreview;
 -(int) switchCamera;
 -(int) startPublish:(NSString*)rtmpUrl;
@@ -63,6 +60,7 @@
 -(int) setMicEnable:(BOOL)micEnable;
 -(int) setCamEnable:(BOOL)camEnable;
 -(int) setFlashEnable:(BOOL)flashEnable;
+-(int) setSmoothSkinEnable:(BOOL)smoothSkinEnable;
 -(BOOL) capturePicture:(NSString*)filePath;
 
 @end

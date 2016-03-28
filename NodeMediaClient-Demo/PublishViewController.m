@@ -13,7 +13,7 @@
 
 
 @interface PublishViewController () <LivePublisherDelegate>
-@property (weak, nonatomic) IBOutlet CamPreviewView *cameraPreviewView;
+@property (weak, nonatomic) IBOutlet UIView *cameraPreview;
 
 @property (weak, nonatomic) IBOutlet KSHCaptureButton *startBtn;
 @property (weak, nonatomic) IBOutlet UIButton *switchBtn;
@@ -64,14 +64,16 @@
     //5. 开启背景噪音消除，软件消除算法，有一定CPU消耗
     [_lp setDenoiseEnable:YES];
     
-    /*
-     * 6. 开始预览摄像头画面，
-     * _cameraPreviewView   传入CamPreviewView视图对象
-     * [self interfaceOrientation]  传入当前屏幕方向 视频发布的初始方向由此参数确定.也就是说,初始化视图是竖屏,发布的视频既是9:16的竖屏;横屏视图,视频就是16:9的横屏
-     * CAMERA_BACK 初始使用后置摄像头, CAMERA_FRONT:前置
-     */
+    //6. 设置美颜，只能在开始预览之前设置有效
+    [_lp setSmoothSkinEnable:YES];
     
-    [_lp startPreview:_cameraPreviewView interfaceOrientation:[self interfaceOrientation] camId:CAMERA_BACK];
+    /*
+     * 7. 开始预览摄像头画面，
+     * _cameraPreviewView   传入UIView视图对象，当传入nil时，则发布纯音频流
+     * camId：CAMERA_FRONT：初始使用前置摄像头, CAMERA_BACK:后置
+     * frontMirror：当为NO时，前置摄像头预览不再是镜像模式，而是和别人看到的画面一致
+     */
+    [_lp startPreview:_cameraPreview camId:CAMERA_FRONT frontMirror:YES];
     
 }
 
