@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D0A97C81CA907ED002248A0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0A97C71CA907ED002248A0 /* SystemConfiguration.framework */; };
 		9D0F9F5D1B874C95009E89D8 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0F9F5C1B874C95009E89D8 /* libstdc++.dylib */; };
 		9D0F9F5F1B874CB7009E89D8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0F9F5E1B874CB7009E89D8 /* CoreMedia.framework */; };
 		9D0F9F611B874CBD009E89D8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0F9F601B874CBD009E89D8 /* AVFoundation.framework */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D0A97C71CA907ED002248A0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9D0F9F581B874A8C009E89D8 /* LivePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePlayer.h; sourceTree = "<group>"; };
 		9D0F9F591B874A8C009E89D8 /* LivePublisher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePublisher.h; sourceTree = "<group>"; };
 		9D0F9F5C1B874C95009E89D8 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D0A97C81CA907ED002248A0 /* SystemConfiguration.framework in Frameworks */,
 				9DDCA1391BB258AD00F69C0D /* libz.dylib in Frameworks */,
 				9D0F9F631B874CC4009E89D8 /* AudioToolbox.framework in Frameworks */,
 				9D0F9F611B874CBD009E89D8 /* AVFoundation.framework in Frameworks */,
@@ -81,6 +84,7 @@
 				9DE750241B90862F0009CB20 /* KSHCaptureButton.m */,
 				9D0F9F5C1B874C95009E89D8 /* libstdc++.dylib */,
 				9DDCA1381BB258AD00F69C0D /* libz.dylib */,
+				9D0A97C71CA907ED002248A0 /* SystemConfiguration.framework */,
 				9D0F9F621B874CC4009E89D8 /* AudioToolbox.framework */,
 				9D0F9F601B874CBD009E89D8 /* AVFoundation.framework */,
 				9D0F9F5E1B874CB7009E89D8 /* CoreMedia.framework */,
