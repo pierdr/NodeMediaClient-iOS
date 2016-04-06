@@ -218,14 +218,18 @@
 }
 
 
+/**
+ * 1.0.2暂不支持截图
+ */
+
 - (IBAction)capAction:(id)sender {
     //截取当前摄像头预览图 存储到应用程序沙箱目录 在startPreview后即可调用,stopPreview后无法使用
-    static int count = 0;
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
-    NSString *fileName = [NSString stringWithFormat:@"publish_cap_%d.jpg", count++];
-    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
-    BOOL ret = [_lp capturePicture:filePath];
-    NSLog(@"LivePublisher capture picture to %@ [%@]",filePath,ret?@"YES":@"NO");
+//    static int count = 0;
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+//    NSString *fileName = [NSString stringWithFormat:@"publish_cap_%d.jpg", count++];
+//    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
+//    BOOL ret = [_lp capturePicture:filePath];
+//    NSLog(@"LivePublisher capture picture to %@ [%@]",filePath,ret?@"YES":@"NO");
 }
 
 @end
