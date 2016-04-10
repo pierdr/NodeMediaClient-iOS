@@ -1,6 +1,6 @@
 //
 //  LivePublisher.h
-//  NodeMediaClient v1.0.2
+//  NodeMediaClient v1.0.3
 //
 //  Created by Mingliang Chen on 15/8/21.
 //  Copyright (c) 2015年 NodeMedia. All rights reserved.
@@ -60,6 +60,6 @@
 -(int) setMicEnable:(BOOL)micEnable;
 -(int) setCamEnable:(BOOL)camEnable;
 -(int) setFlashEnable:(BOOL)flashEnable;
--(int) setSmoothSkinEnable:(BOOL)smoothSkinEnable;
+-(int) setSmoothSkinLevel:(int)level;
 
 @end

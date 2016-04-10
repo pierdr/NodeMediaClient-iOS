@@ -6,39 +6,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Interactive View Controller-->
-        <scene sceneID="dnF-t8-4tT">
-            <objects>
-                <viewController id="BNw-9n-RrU" customClass="InteractiveViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="R6Z-Vx-kJZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="R22-Hl-eyb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="f0c-pE-3Cl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Upm-jN-X8c">
-                                <rect key="frame" x="0.0" y="80" width="160" height="286"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PHL-LV-QdU" customClass="CamPreviewView">
-                                <rect key="frame" x="160" y="80" width="160" height="286"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="jOc-zE-Bui"/>
-                    <connections>
-                        <outlet property="cameraPreview" destination="PHL-LV-QdU" id="NTC-dN-Nd0"/>
-                        <outlet property="videoPlayView" destination="Upm-jN-X8c" id="ORk-zW-sxX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qlo-wJ-mq5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1394" y="1067"/>
-        </scene>
         <!--Publish View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -51,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TF3-O5-OTm" userLabel="CameraPreview">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TF3-O5-OTm" userLabel="CameraPreviewView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1t-v7-wmd" userLabel="panView">
@@ -100,6 +67,12 @@
                                             <constraint firstAttribute="height" constant="85" id="q13-pN-0rP"/>
                                         </constraints>
                                     </view>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="kA3-Df-XN6">
+                                        <rect key="frame" x="48" y="432" width="266" height="31"/>
+                                        <connections>
+                                            <action selector="beautyLevelChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="enj-hc-aOM"/>
+                                        </connections>
+                                    </slider>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -119,7 +92,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="K9t-sQ-AIV">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="IvO-sC-ozW">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Dry-G8-9rt">
+                            <button key="customView" hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Dry-G8-9rt">
                                 <rect key="frame" x="233" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cap"/>
@@ -130,7 +103,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cameraPreview" destination="TF3-O5-OTm" id="Kb1-Nv-6ZO"/>
+                        <outlet property="cameraPreview" destination="TF3-O5-OTm" id="Nht-0O-8g7"/>
                         <outlet property="flashBtn" destination="J9g-pC-qod" id="ct0-QY-2kR"/>
                         <outlet property="startBtn" destination="Odl-aW-WYM" id="KeC-9I-OVg"/>
                         <outlet property="switchBtn" destination="RMZ-Qf-B8T" id="a9h-Wm-bzv"/>
@@ -175,8 +148,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rtmp://stream.nodemedia.cn/live/demo" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="npy-F1-QeS">
-                                <rect key="frame" x="16" y="101" width="288" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rtmp://192.168.0.10/live/sample" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="npy-F1-QeS">
+                                <rect key="frame" x="16" y="101" width="314" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -196,7 +169,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rtmp://stream.nodemedia.cn/live/stream" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K1B-uW-1mg">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rtmp://192.168.0.10/live/stream" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K1B-uW-1mg">
                                 <rect key="frame" x="16" y="206" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>

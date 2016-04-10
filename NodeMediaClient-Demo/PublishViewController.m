@@ -59,13 +59,13 @@
      *  自适应横竖屏发布分辨率，不用反转此处的高宽值
      *  目前为软编码，fps对CPU消耗影响较大，不宜过高
      */
-    [_lp setVideoParamWidth:640 height:360 fps:15 bitrate:400*1000 avcProfile:AVC_PROFILE_MAIN];
+    [_lp setVideoParamWidth:640 height:360 fps:15 bitrate:800*1000 avcProfile:AVC_PROFILE_MAIN];
     
     //5. 开启背景噪音消除，软件消除算法，有一定CPU消耗
     [_lp setDenoiseEnable:YES];
     
-    //6. 设置美颜，只能在开始预览之前设置有效
-    [_lp setSmoothSkinEnable:YES];
+    //6. 设置美颜等级  0 关闭 ,1-5 5个等级 越大越亮,磨皮程度越高,随时可以设置
+    [_lp setSmoothSkinLevel:0];
     
     /*
      * 7. 开始预览摄像头画面，
@@ -217,19 +217,28 @@
     
 }
 
-
-/**
- * 1.0.2暂不支持截图
- */
-
+//咱不支持发布截图
 - (IBAction)capAction:(id)sender {
-    //截取当前摄像头预览图 存储到应用程序沙箱目录 在startPreview后即可调用,stopPreview后无法使用
+//    //截取当前摄像头预览图 存储到应用程序沙箱目录 在startPreview后即可调用,stopPreview后无法使用
 //    static int count = 0;
 //    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
 //    NSString *fileName = [NSString stringWithFormat:@"publish_cap_%d.jpg", count++];
 //    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
 //    BOOL ret = [_lp capturePicture:filePath];
 //    NSLog(@"LivePublisher capture picture to %@ [%@]",filePath,ret?@"YES":@"NO");
+}
+
+
+- (IBAction)beautyLevelChange:(id)sender {
+    UISlider* slider = (UISlider*)sender;
+    
+    /*
+     * 设置美颜等级 0-5 ,可随时调节
+     * 0就是关闭美颜 
+     * 1-5 美颜等级 越高越亮磨皮程度越高
+     */
+    [_lp setSmoothSkinLevel:slider.value];
+    
 }
 
 @end
