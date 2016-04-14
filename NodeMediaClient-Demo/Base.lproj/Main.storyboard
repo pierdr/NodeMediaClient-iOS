@@ -92,7 +92,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="K9t-sQ-AIV">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="IvO-sC-ozW">
-                            <button key="customView" hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Dry-G8-9rt">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Dry-G8-9rt">
                                 <rect key="frame" x="233" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cap"/>

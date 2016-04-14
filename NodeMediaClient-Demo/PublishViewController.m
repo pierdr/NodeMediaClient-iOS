@@ -45,21 +45,21 @@
     [_lp setAudioParamBitrate:32*1000 aacProfile:AAC_PROFILE_HE];
     
     /**
-     *4.设置视频参数 宽568 高320 fps 15 码率300kbps，main profile
+     *4.设置视频参数
      *  高宽比例推荐使用16:9的分辨率
      *  320X180@15 ~~ 200kbps
-        480X272@15 ~~ 250kbps
-        568x320@15 ~~ 300kbps
-        640X360@15 ~~ 400kbps
-        720x405@15 ~~ 500kbps
-        854x480@15 ~~ 600kbps
-        960x540@15 ~~ 700kbps
-        1024x576@15 ~~ 800kbps
-        1280x720@15 ~~ 1000kbps
+     *  480X272@15 ~~ 250kbps
+     *  568x320@15 ~~ 300kbps
+     *  640X360@15 ~~ 400kbps
+     *  720x405@15 ~~ 500kbps
+     *  854x480@15 ~~ 600kbps
+     *  960x540@15 ~~ 700kbps
+     *  1024x576@15 ~~ 800kbps
+     *  1280x720@15 ~~ 1000kbps
      *  自适应横竖屏发布分辨率，不用反转此处的高宽值
      *  目前为软编码，fps对CPU消耗影响较大，不宜过高
      */
-    [_lp setVideoParamWidth:640 height:360 fps:15 bitrate:800*1000 avcProfile:AVC_PROFILE_MAIN];
+    [_lp setVideoParamWidth:640 height:360 fps:15 bitrate:400*1000 avcProfile:AVC_PROFILE_MAIN];
     
     //5. 开启背景噪音消除，软件消除算法，有一定CPU消耗
     [_lp setDenoiseEnable:YES];
@@ -80,14 +80,14 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-
+    
     dispatch_async(dispatch_queue_create("close_dispatch",0), ^{
         //停止预览，停止发布
         [_lp stopPreview];
         [_lp stopPublish];
         _lp = nil;
     });
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -97,12 +97,6 @@
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
-    //注意：如果你的业务方案需求只做单一方向的视频直播，可以不处理这段
-    
-    //如果开启了多个设备视图方向，且没有锁定屏幕方向,画面将会旋转，请把旋转后的方向传给LivePublisher，用以调整摄像头方向
-    [_lp setCameraOrientation:toInterfaceOrientation];
-    
-    
     //还没有开始发布视频的时候，可以跟随界面旋转的方向设置视频与当前界面方向一致，但一经开始发布视频，是不能修改视频发布方向的了
     //请注意：如果视频发布过程中旋转了界面，停止发布，再开始发布，是不会触发"willRotateToInterfaceOrientation"进入这个参数设置的
     if(!_isStarting) {
@@ -156,6 +150,12 @@
             case 2101:
                 //发布端网络恢复畅通
                 break;
+            case 2102:
+                //截图保存成功
+                break;
+            case 2103:
+                //截图保存失败
+                break;
             default:
                 break;
         }
@@ -179,15 +179,15 @@
     } else {
         //设置发布视频方向
         //如果不调用，则视频方向为调用预览方法时的界面方向，如果需要指定固定的发布方向，则在开始发布之前调用此方法 (可选方法)
-//        [_lp setVideoOrientation:VIDEO_ORI_PORTRAIT];
+        //        [_lp setVideoOrientation:VIDEO_ORI_PORTRAIT];
         
         //也可用在明确需要横屏16:9 的视频发布 但用户锁定了手机方向旋转，设置参数为：VIDEO_ORI_LANDSCAPE 或 VIDEO_ORI_LANDSCAPE_REVERSE 并提示用户横屏握手机
-//        [_lp setVideoOrientation:VIDEO_ORI_LANDSCAPE];
+        //        [_lp setVideoOrientation:VIDEO_ORI_LANDSCAPE];
         
-//        _lp.pageUrl = @"http://www.pageurl.com";
-//        _lp.swfUrl = @"http://www.swfurl.com";
+        //        _lp.pageUrl = @"http://www.pageurl.com";
+        //        _lp.swfUrl = @"http://www.swfurl.com";
         
-//        _lp.publishType = PUBLISH_TYPE_RECORD;    //设置为发布录制模式 fms与red5兼容
+        //        _lp.publishType = PUBLISH_TYPE_RECORD;    //设置为发布录制模式 fms与red5兼容
         
         //开始发布 普通模式
         [_lp startPublish:[[DefConfig sharedInstance] getPublishUrl]];
@@ -217,15 +217,14 @@
     
 }
 
-//咱不支持发布截图
+
 - (IBAction)capAction:(id)sender {
-//    //截取当前摄像头预览图 存储到应用程序沙箱目录 在startPreview后即可调用,stopPreview后无法使用
-//    static int count = 0;
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
-//    NSString *fileName = [NSString stringWithFormat:@"publish_cap_%d.jpg", count++];
-//    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
-//    BOOL ret = [_lp capturePicture:filePath];
-//    NSLog(@"LivePublisher capture picture to %@ [%@]",filePath,ret?@"YES":@"NO");
+    //截取当前摄像头预览图 存储到应用程序沙箱目录 在startPreview后即可调用,stopPreview后无法使用
+    static int count = 0;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+    NSString *fileName = [NSString stringWithFormat:@"publish_cap_%d.jpg", count++];
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
+    [_lp capturePicture:filePath]; //1.x版 截图为异步操作,结果以eventCallback形式通知: 2102成功 2103失败,可以保存美颜后的效果
 }
 
 
@@ -234,7 +233,7 @@
     
     /*
      * 设置美颜等级 0-5 ,可随时调节
-     * 0就是关闭美颜 
+     * 0就是关闭美颜
      * 1-5 美颜等级 越高越亮磨皮程度越高
      */
     [_lp setSmoothSkinLevel:slider.value];
