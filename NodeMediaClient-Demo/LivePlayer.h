@@ -1,6 +1,6 @@
 //
 //  LivePlayer.h
-//  NodeMediaClient v1.0.4
+//  NodeMediaClient v1.0.5
 //
 //  Created by Mingliang Chen on 15/8/21.
 //  Copyright (c) 2015年 NodeMedia. All rights reserved.
