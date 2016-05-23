@@ -50,6 +50,11 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 ##双向音视频？
 支持一个页面内同时发布视频和播放视频，但由于有回音问题，建议这种应用使用耳机，后期的版本会考虑回音消除
 
+##ipv6
+苹果2016年6月新政策规定新上架app必须支持ipv6-only。经过验证，我们已发布的版本均支持ipv6地址或解析到ipv6地址的域名进行直播。可使用下面的地址验证，（注：需要测试环境具有公网ipv6环境）
+ * rtmp://[lssv6.nodemedia.cn]/live/demo
+ * rtmp://[2001:19f0:7000:80b5:5400:00ff:fe27:3f9b]/live/demo
+
 ##关于版本号
 v0.x版功能性开发冻结，做稳定性维护与bug修复  
 v1.x版目前为非稳定版，新的功能在此分支上开发。当然我们会尽快稳定美颜部分，欢迎大家测试提交问题与建议。谢谢大家的支持。
