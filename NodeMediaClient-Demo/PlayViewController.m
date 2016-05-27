@@ -51,23 +51,22 @@
     [_lp setMaxBufferTime:2000];
     
     //5.设置是否接收音视频流  参考 rtmp_specification_1.0.pdf 7.2.2.4. & 7.2.2.5.
-    //默认都为true 如不需要可以不设置该值
-    //注意： 目前测试了fms和red5支持该参数设定有效，欢迎测试补充
-//    _lp.receiveAudio = true;
+    //默认都为true 如不需要可以不设置该值,当设为false时就不接收
+    //注意： 目前测试了奥点云，fms和red5支持该参数设定有效
+//    _lp.receiveAudio = false;
 //    _lp.receiveVideo = false;
     
+    /**
+     * 5.当设为true时，向服务端发送FCSubscribe命令，默认不发送
+     * When streaming RTMP live streams using the Akamai, Edgecast or Limelight CDN,
+     * players cannot simply connect to the live stream. Instead, they have to subscribe to it, 
+     * by sending a so-called FC Subscribe call to the server.
+     */
+//    _lp.subscribe = true;
+    
     //6.开始播放 异步操作,调用后即返回,播放状态由LivePlayerDelegate回调.
-    //v0.4版本后支持软件解码H.264+AAC的HLS协议
     [_lp startPlay:[[DefConfig sharedInstance] getPlayUrl]];
 
-    
-    // 每200毫秒获取一次bufferLength做缓冲调试
-//    dispatch_async(dispatch_queue_create("buffer_length_dispatch",DISPATCH_QUEUE_SERIAL), ^{
-//        while(_lp != nil) {
-//            NSLog(@"BufferLength:%d",[_lp getBufferLength]);
-//            usleep(200000);
-//        }
-//    });
 }
 
 -(void) viewWillDisappear:(BOOL)animated {
@@ -99,7 +98,7 @@
             //开始连接播放流
             break;
         case 1001:
-            //播放流连接成功 开始播放
+            //播放流连接成功
             break;
         case 1002:
             //播放流连接失败
