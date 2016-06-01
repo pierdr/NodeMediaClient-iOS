@@ -32,6 +32,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 * 支持单音频流发布
 * 支持发布中途来电保持网络流，暂停发布，挂机后继续发布
 * 支持预览摄像头后,任意时刻截图
+* 支持基于GPU加速的实时美颜滤镜
 * 支持定义为'live','record','append'的发布类型
 * 支持Adobe auth模式的鉴权验证 如rtmp://user:pass@server:port/app/name
 
@@ -68,6 +69,7 @@ v1.x版目前为开发版，新的功能在此分支上发布。
  * 硬件编解码
  * 新增实现：用于1对1音视频的开发类，包含回音消除
  * 新增实现：用于点播的类
+ * 发布端更多滤镜特效,大眼,瘦脸
 
 ##商用授权
 程序发布需商用授权，业务咨询请联系  
