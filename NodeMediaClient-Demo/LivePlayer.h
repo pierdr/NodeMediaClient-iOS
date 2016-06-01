@@ -1,6 +1,6 @@
 //
 //  LivePlayer.h
-//  NodeMediaClient v1.0.5
+//  NodeMediaClient v1.0.7
 //
 //  Created by Mingliang Chen on 15/8/21.
 //  Copyright (c) 2015年 NodeMedia. All rights reserved.
@@ -31,6 +31,11 @@
  */
 @property (nonatomic) bool receiveAudio;
 @property (nonatomic) bool receiveVideo;
+
+/**
+ * 
+ */
+@property (nonatomic) bool subscribe;
 
 -(int) setUIView:(UIView*)playVideoView ContentMode:(UIViewContentMode)contentMode;
 -(int) startPlay:(NSString*)rtmpUrl;

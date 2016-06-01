@@ -1,6 +1,6 @@
 //
 //  LivePublisher.h
-//  NodeMediaClient v1.0.5
+//  NodeMediaClient v1.0.7
 //
 //  Created by Mingliang Chen on 15/8/21.
 //  Copyright (c) 2015年 NodeMedia. All rights reserved.
@@ -14,6 +14,7 @@
 
 #define AVC_PROFILE_BASELINE 0          //H.264 Baseline profile
 #define AVC_PROFILE_MAIN     1          //H.264 Main profile
+#define AVC_PROFILE_HIGH     2          //H.264 High profile
 
 #define CAMERA_BACK  0                  //后置摄像头
 #define CAMERA_FRONT 1                  //前置摄像头
@@ -62,5 +63,5 @@
 -(int) setFlashEnable:(BOOL)flashEnable;
 -(int) setSmoothSkinLevel:(int)level;
 -(void) capturePicture:(NSString*)filePath;
-
+-(void) requestFocusWithAuto:(BOOL)autoFocus;
 @end

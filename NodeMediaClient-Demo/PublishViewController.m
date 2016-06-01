@@ -41,25 +41,35 @@
     _lp = [[LivePublisher alloc] init]; // 1.
     [_lp setLivePublisherDelegate:self]; // 2.设置事件delegate
     
-    //3.设置音频参数，码率32kbps ,HE-AAC
+    /**
+     * 设置输出音频参数
+     * bitrate 码率 32kbps
+     * aacProfile 音频编码复杂度 部分服务端不支持HE-AAC,会导致发布失败，如果服务端支持，直接用HE-AAC
+     *  AAC_PROFILE_LC		低复杂度编码
+     * 	AAC_PROFILE_HE		高效能编码 ，能达到LC-AAC一半的码率传输相同的音质
+     */
     [_lp setAudioParamBitrate:32*1000 aacProfile:AAC_PROFILE_HE];
     
     /**
-     *4.设置视频参数
-     *  高宽比例推荐使用16:9的分辨率
-     *  320X180@15 ~~ 200kbps
-     *  480X272@15 ~~ 250kbps
-     *  568x320@15 ~~ 300kbps
-     *  640X360@15 ~~ 400kbps
-     *  720x405@15 ~~ 500kbps
-     *  854x480@15 ~~ 600kbps
-     *  960x540@15 ~~ 700kbps
-     *  1024x576@15 ~~ 800kbps
-     *  1280x720@15 ~~ 1000kbps
-     *  自适应横竖屏发布分辨率，不用反转此处的高宽值
-     *  目前为软编码，fps对CPU消耗影响较大，不宜过高
+     * 设置输出视频参数
+     * width 视频宽
+     * height 视频高   注意，视频最终输出的高宽和发布方向有关，这里设置 16：9的分辨率就行，sdk自动切换。
+     * fps    视频帧率
+     * bitrate 视频码率	注意，sdk 1.0.7以后，视频码率为最大码率，可以比以前的版本值高一点，编码器自动调节
+     * avcProfile  视频编码复杂度，高中低为三者比较相对而言。可根据应用场景选择
+     * 	AVC_PROFILE_BASELINE		低CPU，低画质
+     *  AVC_PROFILE_MAIN			中CPU，中画质
+     *  AVC_PROFILE_HIGH			高CPU，高画质
+     *
+     * 以下建议分辨率及比特率 不用超过1280x720
+     * 320X180@15  ~~ 300kbps  ~~ baseline
+     * 568x320@15  ~~ 400kbps  ~~ baseline
+     * 640X360@15  ~~ 500kbps  ~~ main
+     * 854x480@15  ~~ 600kbps  ~~ main
+     * 960x540@15  ~~ 800kbps  ~~ high
+     * 1280x720@15 ~~ 1000kbps ~~ high
      */
-    [_lp setVideoParamWidth:640 height:360 fps:15 bitrate:400*1000 avcProfile:AVC_PROFILE_MAIN];
+    [_lp setVideoParamWidth:640 height:360 fps:15 bitrate:500*1000 avcProfile:AVC_PROFILE_MAIN];
     
     //5. 开启背景噪音消除，软件消除算法，有一定CPU消耗
     [_lp setDenoiseEnable:YES];

@@ -56,6 +56,13 @@
 //    _lp.receiveAudio = true;
 //    _lp.receiveVideo = false;
     
+    /**
+     * 5.当设为true时，向服务端发送FCSubscribe命令，默认不发送
+     * When streaming RTMP live streams using the Akamai, Edgecast or Limelight CDN,
+     * players cannot simply connect to the live stream. Instead, they have to subscribe to it,
+     * by sending a so-called FC Subscribe call to the server.
+     */
+//    _lp.subscribe = true;
     //6.开始播放 异步操作,调用后即返回,播放状态由LivePlayerDelegate回调.
     //v0.4版本后支持软件解码H.264+AAC的HLS协议
     [_lp startPlay:[[DefConfig sharedInstance] getPlayUrl]];
