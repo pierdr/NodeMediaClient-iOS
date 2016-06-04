@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		9D0A97C81CA907ED002248A0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0A97C71CA907ED002248A0 /* SystemConfiguration.framework */; };
-		9D0F9F5D1B874C95009E89D8 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0F9F5C1B874C95009E89D8 /* libstdc++.dylib */; };
 		9D0F9F5F1B874CB7009E89D8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0F9F5E1B874CB7009E89D8 /* CoreMedia.framework */; };
 		9D0F9F611B874CBD009E89D8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0F9F601B874CBD009E89D8 /* AVFoundation.framework */; };
 		9D0F9F631B874CC4009E89D8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0F9F621B874CC4009E89D8 /* AudioToolbox.framework */; };
 		9D1D5E911B93581B00563396 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1D5E901B93581B00563396 /* MainViewController.m */; };
 		9D1D5E941B935DAD00563396 /* DefConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1D5E931B935DAD00563396 /* DefConfig.m */; };
 		9D56CFBD1B8E0ED8005E3DEB /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D56CFBC1B8E0ED8005E3DEB /* PlayViewController.m */; };
+		9D7CAA951D02E06E00B2D432 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7CAA941D02E06E00B2D432 /* VideoToolbox.framework */; };
 		9DA611BB1B86BF5900B6179D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA611BA1B86BF5900B6179D /* main.m */; };
 		9DA611BE1B86BF5900B6179D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA611BD1B86BF5900B6179D /* AppDelegate.m */; };
 		9DA611C11B86BF5900B6179D /* PublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA611C01B86BF5900B6179D /* PublishViewController.m */; };
@@ -30,7 +30,6 @@
 		9D0A97C71CA907ED002248A0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9D0F9F581B874A8C009E89D8 /* LivePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePlayer.h; sourceTree = "<group>"; };
 		9D0F9F591B874A8C009E89D8 /* LivePublisher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePublisher.h; sourceTree = "<group>"; };
-		9D0F9F5C1B874C95009E89D8 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		9D0F9F5E1B874CB7009E89D8 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		9D0F9F601B874CBD009E89D8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9D0F9F621B874CC4009E89D8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -40,6 +39,7 @@
 		9D1D5E931B935DAD00563396 /* DefConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefConfig.m; sourceTree = "<group>"; };
 		9D56CFBB1B8E0ED8005E3DEB /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
 		9D56CFBC1B8E0ED8005E3DEB /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
+		9D7CAA941D02E06E00B2D432 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		9DA611B51B86BF5900B6179D /* NodeMediaClient-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NodeMediaClient-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DA611B91B86BF5900B6179D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DA611BA1B86BF5900B6179D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -63,12 +63,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D7CAA951D02E06E00B2D432 /* VideoToolbox.framework in Frameworks */,
 				9D0A97C81CA907ED002248A0 /* SystemConfiguration.framework in Frameworks */,
 				9DDCA1391BB258AD00F69C0D /* libz.dylib in Frameworks */,
 				9D0F9F631B874CC4009E89D8 /* AudioToolbox.framework in Frameworks */,
 				9D0F9F611B874CBD009E89D8 /* AVFoundation.framework in Frameworks */,
 				9D0F9F5F1B874CB7009E89D8 /* CoreMedia.framework in Frameworks */,
-				9D0F9F5D1B874C95009E89D8 /* libstdc++.dylib in Frameworks */,
 				9DBCC73F1BC6C13000C31BE8 /* libNodeMediaClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,11 +79,11 @@
 		9D0F9F641B874D57009E89D8 /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				9DBCC73E1BC6C13000C31BE8 /* libNodeMediaClient.a */,
+				9DDCA1381BB258AD00F69C0D /* libz.dylib */,
 				9DE750231B90862F0009CB20 /* KSHCaptureButton.h */,
 				9DE750241B90862F0009CB20 /* KSHCaptureButton.m */,
-				9D0F9F5C1B874C95009E89D8 /* libstdc++.dylib */,
-				9DDCA1381BB258AD00F69C0D /* libz.dylib */,
+				9DBCC73E1BC6C13000C31BE8 /* libNodeMediaClient.a */,
+				9D7CAA941D02E06E00B2D432 /* VideoToolbox.framework */,
 				9D0A97C71CA907ED002248A0 /* SystemConfiguration.framework */,
 				9D0F9F621B874CC4009E89D8 /* AudioToolbox.framework */,
 				9D0F9F601B874CBD009E89D8 /* AVFoundation.framework */,

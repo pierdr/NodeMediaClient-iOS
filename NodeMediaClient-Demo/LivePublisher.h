@@ -1,6 +1,6 @@
 //
 //  LivePublisher.h
-//  NodeMediaClient v1.0.7
+//  NodeMediaClient v1.0.8
 //
 //  Created by Mingliang Chen on 15/8/21.
 //  Copyright (c) 2015年 NodeMedia. All rights reserved.
@@ -62,6 +62,7 @@
 -(int) setCamEnable:(BOOL)camEnable;
 -(int) setFlashEnable:(BOOL)flashEnable;
 -(int) setSmoothSkinLevel:(int)level;
+-(int) setHWEnable:(BOOL)hwEnable;
 -(void) capturePicture:(NSString*)filePath;
 -(void) requestFocusWithAuto:(BOOL)autoFocus;
 @end

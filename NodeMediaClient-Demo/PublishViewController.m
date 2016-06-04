@@ -77,8 +77,11 @@
     //6. 设置美颜等级  0 关闭 ,1-5 5个等级 越大越亮,磨皮程度越高,随时可以设置
     [_lp setSmoothSkinLevel:0];
     
+    //7. 设置硬编码开启,需要iOS版本8.0 , 如果低于8.0的系统,仍然使用软编码;
+    [_lp setHWEnable:YES];
+    
     /*
-     * 7. 开始预览摄像头画面，
+     * 8. 开始预览摄像头画面，
      * _cameraPreviewView   传入UIView视图对象，当传入nil时，则发布纯音频流
      * camId：CAMERA_FRONT：初始使用前置摄像头, CAMERA_BACK:后置
      * frontMirror：当为NO时，前置摄像头预览不再是镜像模式，而是和别人看到的画面一致
