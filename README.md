@@ -35,6 +35,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 * 支持基于GPU加速的实时美颜滤镜
 * 支持定义为'live','record','append'的发布类型
 * 支持Adobe auth模式的鉴权验证 如rtmp://user:pass@server:port/app/name
+* iOS8以上支持视频硬编码
 
 
 ##直播播放特性
