@@ -60,10 +60,6 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
  * rtmp://[lssv6.nodemedia.cn]/live/demo
  * rtmp://[2001:19f0:7000:80b5:5400:00ff:fe27:3f9b]/live/demo
 
-##关于版本号
-v0.x版功能性开发冻结，做稳定性维护与bug修复  
-v1.x版目前为开发版，新的功能在此分支上发布。
-
 ## v1.x 版本主要开发计划
  * 实时美颜发布
  * 4:3分辨率发布
