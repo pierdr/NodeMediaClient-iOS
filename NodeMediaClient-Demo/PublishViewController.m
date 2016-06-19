@@ -38,8 +38,8 @@
     //屏幕常亮
     [ [ UIApplication sharedApplication] setIdleTimerDisabled:YES ];
     
-    _lp = [[LivePublisher alloc] init]; // 1.
-    [_lp setLivePublisherDelegate:self]; // 2.设置事件delegate
+    _lp = [[LivePublisher alloc] init];
+    [_lp setLivePublisherDelegate:self]; // 设置事件delegate
     
     /**
      * 设置输出音频参数
@@ -71,17 +71,20 @@
      */
     [_lp setVideoParamWidth:640 height:360 fps:15 bitrate:500*1000 avcProfile:AVC_PROFILE_MAIN];
     
-    //5. 开启背景噪音消除，软件消除算法，有一定CPU消耗
+    // 开启背景噪音消除，软件消除算法
     [_lp setDenoiseEnable:YES];
     
-    //6. 设置美颜等级  0 关闭 ,1-5 5个等级 越大越亮,磨皮程度越高,随时可以设置
+    // 设置美颜等级  0 关闭 ,1-5 5个等级 越大越亮,磨皮程度越高,随时可以设置
     [_lp setSmoothSkinLevel:0];
     
-    //7. 设置硬编码开启,需要iOS版本8.0 , 如果低于8.0的系统,仍然使用软编码;
+    // 设置硬编码开启,需要iOS版本8.0 , 如果低于8.0的系统,仍然使用软编码;
     [_lp setHWEnable:YES];
     
+    //设置关键帧间隔,单位秒,不设置是默认为1
+//    [_lp setKeyFrameInterval:1];
+    
     /*
-     * 8. 开始预览摄像头画面，
+     *  开始预览摄像头画面，
      * _cameraPreviewView   传入UIView视图对象，当传入nil时，则发布纯音频流
      * camId：CAMERA_FRONT：初始使用前置摄像头, CAMERA_BACK:后置
      * frontMirror：当为NO时，前置摄像头预览不再是镜像模式，而是和别人看到的画面一致

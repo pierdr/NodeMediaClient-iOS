@@ -1,6 +1,6 @@
 //
 //  LivePublisher.h
-//  NodeMediaClient v1.0.8
+//  NodeMediaClient v1.0.9
 //
 //  Created by Mingliang Chen on 15/8/21.
 //  Copyright (c) 2015年 NodeMedia. All rights reserved.
@@ -47,6 +47,9 @@
 @property (nonatomic, strong) NSString *pageUrl;
 @property (nonatomic, strong) NSString *swfUrl;
 @property (nonatomic) int publishType;
+
+///关键帧间隔,单位秒,默认1
+@property (nonatomic) int keyFrameInterval;
 
 -(int) setAudioParamBitrate:(int)bitrate aacProfile:(int)aacProfile;
 -(int) setVideoParamWidth:(int)width height:(int)height fps:(int)fps bitrate:(int)bitrate avcProfile:(int)avcProfile;
