@@ -113,6 +113,7 @@
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
+    [_lp setCameraOrientation:toInterfaceOrientation];
     //还没有开始发布视频的时候，可以跟随界面旋转的方向设置视频与当前界面方向一致，但一经开始发布视频，是不能修改视频发布方向的了
     //请注意：如果视频发布过程中旋转了界面，停止发布，再开始发布，是不会触发"willRotateToInterfaceOrientation"进入这个参数设置的
     if(!_isStarting) {
