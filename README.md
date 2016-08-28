@@ -41,6 +41,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 ##直播播放特性
 * 只为RTMP协议优化的码流解析器，极短的分析时间，秒开RTMP视频流
 * NEON指令集优化的软件解码器，性能好，兼容性强
+* 支持的网络协议 RTMP/RTMPT/RTSP/HLS/HTTP-FLV
 * 支持的视频解码器:H.264, FLV, VP6
 * 支持的音频解码器:AAC, MP3, SPEEX, NELLYMOSER, ADPCM_SWF, G.711
 * OpenGL ES视频渲染
