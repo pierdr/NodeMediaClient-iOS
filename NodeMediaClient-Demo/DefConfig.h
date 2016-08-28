@@ -13,7 +13,11 @@
 
 -(void)putPlayUrl:(NSString*)playUrl;
 -(void)putPublishUrl:(NSString*)publishUrl;
+-(void)putBufferTime:(int)bufferTime;
+-(void)putMaxBufferTime:(int)maxBufferTime;
 
 -(NSString*)getPlayUrl;
 -(NSString*)getPublishUrl;
+-(int)getBufferTime;
+-(int)getMaxBufferTime;
 @end

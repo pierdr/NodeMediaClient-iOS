@@ -13,6 +13,7 @@
 		9D0F9F631B874CC4009E89D8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0F9F621B874CC4009E89D8 /* AudioToolbox.framework */; };
 		9D1D5E911B93581B00563396 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1D5E901B93581B00563396 /* MainViewController.m */; };
 		9D1D5E941B935DAD00563396 /* DefConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1D5E931B935DAD00563396 /* DefConfig.m */; };
+		9D3447F91D7023100001E670 /* NodePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D3447F81D7023100001E670 /* NodePlayerViewController.m */; };
 		9D56CFBD1B8E0ED8005E3DEB /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D56CFBC1B8E0ED8005E3DEB /* PlayViewController.m */; };
 		9D7CAA951D02E06E00B2D432 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7CAA941D02E06E00B2D432 /* VideoToolbox.framework */; };
 		9DA611BB1B86BF5900B6179D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA611BA1B86BF5900B6179D /* main.m */; };
@@ -37,6 +38,9 @@
 		9D1D5E901B93581B00563396 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		9D1D5E921B935DAD00563396 /* DefConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefConfig.h; sourceTree = "<group>"; };
 		9D1D5E931B935DAD00563396 /* DefConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefConfig.m; sourceTree = "<group>"; };
+		9D3447F61D7022C20001E670 /* NodePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodePlayer.h; sourceTree = "<group>"; };
+		9D3447F71D7023100001E670 /* NodePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodePlayerViewController.h; sourceTree = "<group>"; };
+		9D3447F81D7023100001E670 /* NodePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodePlayerViewController.m; sourceTree = "<group>"; };
 		9D56CFBB1B8E0ED8005E3DEB /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
 		9D56CFBC1B8E0ED8005E3DEB /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
 		9D7CAA941D02E06E00B2D432 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
@@ -115,6 +119,7 @@
 				9D0F9F641B874D57009E89D8 /* libs */,
 				9D0F9F581B874A8C009E89D8 /* LivePlayer.h */,
 				9D0F9F591B874A8C009E89D8 /* LivePublisher.h */,
+				9D3447F61D7022C20001E670 /* NodePlayer.h */,
 				9DA611BC1B86BF5900B6179D /* AppDelegate.h */,
 				9DA611BD1B86BF5900B6179D /* AppDelegate.m */,
 				9D1D5E921B935DAD00563396 /* DefConfig.h */,
@@ -125,6 +130,8 @@
 				9DA611C01B86BF5900B6179D /* PublishViewController.m */,
 				9D56CFBB1B8E0ED8005E3DEB /* PlayViewController.h */,
 				9D56CFBC1B8E0ED8005E3DEB /* PlayViewController.m */,
+				9D3447F71D7023100001E670 /* NodePlayerViewController.h */,
+				9D3447F81D7023100001E670 /* NodePlayerViewController.m */,
 				9DA611C21B86BF5900B6179D /* Main.storyboard */,
 				9DA611C51B86BF5900B6179D /* Images.xcassets */,
 				9DA611C71B86BF5900B6179D /* LaunchScreen.xib */,
@@ -190,7 +197,7 @@
 				TargetAttributes = {
 					9DA611B41B86BF5900B6179D = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = KH9H8WF8C5;
+						DevelopmentTeam = 4XJ98G8FF6;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -245,6 +252,7 @@
 				9DA611BE1B86BF5900B6179D /* AppDelegate.m in Sources */,
 				9D1D5E941B935DAD00563396 /* DefConfig.m in Sources */,
 				9DA611BB1B86BF5900B6179D /* main.m in Sources */,
+				9D3447F91D7023100001E670 /* NodePlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

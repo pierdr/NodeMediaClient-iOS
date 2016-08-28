@@ -149,12 +149,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rtmp://192.168.0.10/live/sample" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="npy-F1-QeS">
-                                <rect key="frame" x="16" y="101" width="314" height="30"/>
+                                <rect key="frame" x="16" y="101" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qM-AZ-u8v">
-                                <rect key="frame" x="16" y="139" width="288" height="30"/>
+                                <rect key="frame" x="16" y="178" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Run LivePlayer Demo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -164,18 +164,18 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="发布地址：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fs-nk-jZJ">
-                                <rect key="frame" x="16" y="177" width="85" height="21"/>
+                                <rect key="frame" x="16" y="219" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rtmp://192.168.0.10/live/stream" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K1B-uW-1mg">
-                                <rect key="frame" x="16" y="206" width="288" height="30"/>
+                                <rect key="frame" x="16" y="248" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MuE-n3-uDp">
-                                <rect key="frame" x="16" y="244" width="288" height="34"/>
+                                <rect key="frame" x="16" y="286" width="288" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Run LivePubliser Demo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -184,11 +184,51 @@
                                     <segue destination="BYZ-38-t0r" kind="push" id="okO-hw-pl4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eH8-wa-pq8">
+                                <rect key="frame" x="16" y="368" width="288" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Run NodePlayer Demo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="5Ls-wP-0CK" kind="push" id="vDL-gF-Jiv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="多播演示：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QnI-mm-b4g">
+                                <rect key="frame" x="16" y="344" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="启动缓冲:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFL-Qu-9OV">
+                                <rect key="frame" x="16" y="143" width="73" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1000" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0TH-SA-bmD">
+                                <rect key="frame" x="91" y="139" width="62" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="最大缓冲:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G06-xE-Ot3">
+                                <rect key="frame" x="167" y="144" width="73" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2000" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGI-eM-41s">
+                                <rect key="frame" x="242" y="140" width="62" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="NodeMediaClient Demo" id="9j2-MG-0GO"/>
                     <connections>
+                        <outlet property="bufferTime" destination="0TH-SA-bmD" id="S7L-uR-1ma"/>
+                        <outlet property="maxBufferTime" destination="hGI-eM-41s" id="sNx-cj-AdX"/>
                         <outlet property="playUrl" destination="npy-F1-QeS" id="Kcu-S4-ZEc"/>
                         <outlet property="publishUrl" destination="K1B-uW-1mg" id="pan-sQ-R3u"/>
                     </connections>
@@ -196,6 +236,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yxI-8L-Gw9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="840" y="134"/>
+        </scene>
+        <!--Node Player View Controller-->
+        <scene sceneID="09p-4q-Mxh">
+            <objects>
+                <viewController id="5Ls-wP-0CK" customClass="NodePlayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5ie-pF-abj"/>
+                        <viewControllerLayoutGuide type="bottom" id="daj-xN-bQh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D8f-R3-Idy" userLabel="View" customClass="Node">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQJ-UE-rTP" userLabel="PlayVideoView1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="63n-YP-w5J" userLabel="PlayVideoView2">
+                                        <rect key="frame" x="0.0" y="425" width="131" height="143"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x1J-jy-mu1" userLabel="PlayVideoView3">
+                                        <rect key="frame" x="189" y="425" width="131" height="143"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="hQJ-UE-rTP" secondAttribute="bottom" id="3vF-cW-jsW"/>
+                            <constraint firstItem="hQJ-UE-rTP" firstAttribute="top" secondItem="D8f-R3-Idy" secondAttribute="top" id="8SR-jq-KDb"/>
+                            <constraint firstAttribute="trailing" secondItem="hQJ-UE-rTP" secondAttribute="trailing" id="jfc-Sy-gBq"/>
+                            <constraint firstItem="hQJ-UE-rTP" firstAttribute="leading" secondItem="D8f-R3-Idy" secondAttribute="leading" id="yar-6u-neZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zGs-KV-CKC"/>
+                    <connections>
+                        <outlet property="playView1" destination="hQJ-UE-rTP" id="fgP-7y-8c2"/>
+                        <outlet property="playView2" destination="63n-YP-w5J" id="5z8-uB-5a5"/>
+                        <outlet property="playView3" destination="x1J-jy-mu1" id="90d-20-Vkw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Au5-Nf-A26" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840" y="824"/>
         </scene>
         <!--Play View Controller-->
         <scene sceneID="QKn-bQ-m5I">

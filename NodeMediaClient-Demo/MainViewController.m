@@ -12,6 +12,8 @@
 @interface MainViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *playUrl;
 @property (weak, nonatomic) IBOutlet UITextField *publishUrl;
+@property (weak, nonatomic) IBOutlet UITextField *bufferTime;
+@property (weak, nonatomic) IBOutlet UITextField *maxBufferTime;
 
 @end
 
@@ -21,13 +23,27 @@
     [super viewDidLoad];
     [_playUrl setDelegate:self];
     [_publishUrl setDelegate:self];
-    NSString *playUrl =[[DefConfig sharedInstance] getPlayUrl];
+    [_bufferTime setDelegate:self];
+    [_maxBufferTime setDelegate:self];
+    
+    NSString *playUrl = [[DefConfig sharedInstance] getPlayUrl];
     if(playUrl != nil) {
         _playUrl.text =playUrl;
     }
-    NSString *publishUrl =[[DefConfig sharedInstance] getPublishUrl];
+    
+    NSString *publishUrl = [[DefConfig sharedInstance] getPublishUrl];
     if(publishUrl != nil) {
         _publishUrl.text = publishUrl;
+    }
+    
+    int bt = [[DefConfig sharedInstance] getBufferTime];
+    if(bt > 0) {
+        _bufferTime.text = [NSString stringWithFormat:@"%d",bt];
+    }
+    
+    int mbt = [[DefConfig sharedInstance] getMaxBufferTime];
+    if(mbt > 0) {
+        _maxBufferTime.text = [NSString stringWithFormat:@"%d",mbt];
     }
     
     // Do any additional setup after loading the view.
@@ -46,6 +62,7 @@
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     [[DefConfig sharedInstance] putPlayUrl:_playUrl.text];
     [[DefConfig sharedInstance] putPublishUrl:_publishUrl.text];
-    
+    [[DefConfig sharedInstance] putBufferTime:[_bufferTime.text intValue]];
+    [[DefConfig sharedInstance] putMaxBufferTime:[_maxBufferTime.text intValue]];
 }
 @end

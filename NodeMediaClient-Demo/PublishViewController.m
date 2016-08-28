@@ -38,58 +38,54 @@
     //屏幕常亮
     [ [ UIApplication sharedApplication] setIdleTimerDisabled:YES ];
     
-    _lp = [[LivePublisher alloc] init];
-    [_lp setLivePublisherDelegate:self]; // 设置事件delegate
+    _lp = [[LivePublisher alloc] init]; // 1.
+    [_lp setLivePublisherDelegate:self]; // 2.设置事件delegate
     
-    /**
-     * 设置输出音频参数
-     * bitrate 码率 32kbps
-     * aacProfile 音频编码复杂度 部分服务端不支持HE-AAC,会导致发布失败，如果服务端支持，直接用HE-AAC
-     *  AAC_PROFILE_LC		低复杂度编码
-     * 	AAC_PROFILE_HE		高效能编码 ，能达到LC-AAC一半的码率传输相同的音质
-     */
+    //3.设置音频参数，码率32kbps ,HE-AAC
     [_lp setAudioParamBitrate:32*1000 aacProfile:AAC_PROFILE_HE];
     
     /**
-     * 设置输出视频参数
-     * width 视频宽
-     * height 视频高   注意，视频最终输出的高宽和发布方向有关，这里设置 16：9的分辨率就行，sdk自动切换。
-     * fps    视频帧率
-     * bitrate 视频码率	注意，sdk 1.0.7以后，视频码率为最大码率，可以比以前的版本值高一点，编码器自动调节
-     * avcProfile  视频编码复杂度，高中低为三者比较相对而言。可根据应用场景选择
-     * 	AVC_PROFILE_BASELINE		低CPU，低画质
-     *  AVC_PROFILE_MAIN			中CPU，中画质
-     *  AVC_PROFILE_HIGH			高CPU，高画质
-     *
-     * 以下建议分辨率及比特率 不用超过1280x720
-     * 320X180@15  ~~ 300kbps  ~~ baseline
-     * 568x320@15  ~~ 400kbps  ~~ baseline
-     * 640X360@15  ~~ 500kbps  ~~ main
-     * 854x480@15  ~~ 600kbps  ~~ main
-     * 960x540@15  ~~ 800kbps  ~~ high
-     * 1280x720@15 ~~ 1000kbps ~~ high
+     *4.设置视频参数
+     *  高宽比例推荐使用16:9的分辨率
+     *  320X180@15 ~~ 200kbps
+     *  480X272@15 ~~ 250kbps
+     *  568x320@15 ~~ 300kbps
+     *  640X360@15 ~~ 400kbps
+     *  720x405@15 ~~ 500kbps
+     *  854x480@15 ~~ 600kbps
+     *  960x540@15 ~~ 700kbps
+     *  1024x576@15 ~~ 800kbps
+     *  1280x720@15 ~~ 1000kbps
+     *  自适应横竖屏发布分辨率，不用反转此处的高宽值
+     *  目前为软编码，fps对CPU消耗影响较大，不宜过高
      */
-    [_lp setVideoParamWidth:640 height:360 fps:15 bitrate:500*1000 avcProfile:AVC_PROFILE_MAIN];
+    [_lp setVideoParamWidth:640 height:360 fps:15 bitrate:500*1000 avcProfile:AVC_PROFILE_HIGH];
     
-    // 开启背景噪音消除，软件消除算法
+    //5. 开启背景噪音消除，软件消除算法，有一定CPU消耗
     [_lp setDenoiseEnable:YES];
     
-    // 设置美颜等级  0 关闭 ,1-5 5个等级 越大越亮,磨皮程度越高,随时可以设置
+    //6. 设置美颜等级  0 关闭 ,1-5 5个等级 越大越亮,磨皮程度越高,随时可以设置
     [_lp setSmoothSkinLevel:0];
     
-    // 设置硬编码开启,需要iOS版本8.0 , 如果低于8.0的系统,仍然使用软编码;
+    //7. 设置硬编码开启,需要iOS版本8.0 , 如果低于8.0的系统,仍然使用软编码;
     [_lp setHWEnable:YES];
     
-    //设置关键帧间隔,单位秒,不设置是默认为1
-//    [_lp setKeyFrameInterval:1];
-    
     /*
-     *  开始预览摄像头画面，
+     * 8. 开始预览摄像头画面，
      * _cameraPreviewView   传入UIView视图对象，当传入nil时，则发布纯音频流
      * camId：CAMERA_FRONT：初始使用前置摄像头, CAMERA_BACK:后置
      * frontMirror：当为NO时，前置摄像头预览不再是镜像模式，而是和别人看到的画面一致
      */
     [_lp startPreview:_cameraPreview camId:CAMERA_FRONT frontMirror:YES];
+    
+    
+//    /**
+//     *  请求全时自动对焦或单次对焦后锁定焦距
+//     *  YES 设置后摄像头一直自动对焦
+//     *  NO  设置后立即聚焦一次，然后定焦，以后需要对焦需要再请求一次
+//     *  注意，绝大部分前置摄像头是不支持对焦的
+//     */
+//    [_lp requestFocusWithAuto:NO];
     
 }
 
@@ -113,28 +109,26 @@
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
+    //界面布局旋转，传入新的界面方向，调整摄像头方向
     [_lp setCameraOrientation:toInterfaceOrientation];
+    
     //还没有开始发布视频的时候，可以跟随界面旋转的方向设置视频与当前界面方向一致，但一经开始发布视频，是不能修改视频发布方向的了
-    //请注意：如果视频发布过程中旋转了界面，停止发布，再开始发布，是不会触发"willRotateToInterfaceOrientation"进入这个参数设置的
-    if(!_isStarting) {
-        switch (toInterfaceOrientation) {
-            case UIInterfaceOrientationPortrait:
-                [_lp setVideoOrientation:VIDEO_ORI_PORTRAIT];
-                break;
-            case UIInterfaceOrientationPortraitUpsideDown:
-                [_lp setVideoOrientation:VIDEO_ORI_PORTRAIT_REVERSE];
-                break;
-            case UIInterfaceOrientationLandscapeLeft:
-                [_lp setVideoOrientation:VIDEO_ORI_LANDSCAPE_REVERSE];
-                break;
-            case UIInterfaceOrientationLandscapeRight:
-                [_lp setVideoOrientation:VIDEO_ORI_LANDSCAPE];
-                break;
-                
-            default:
+    switch (toInterfaceOrientation) {
+        case UIInterfaceOrientationPortrait:
+            [_lp setVideoOrientation:VIDEO_ORI_PORTRAIT];
+            break;
+        case UIInterfaceOrientationPortraitUpsideDown:
+            [_lp setVideoOrientation:VIDEO_ORI_PORTRAIT_REVERSE];
+            break;
+        case UIInterfaceOrientationLandscapeLeft:
+            [_lp setVideoOrientation:VIDEO_ORI_LANDSCAPE_REVERSE];
+            break;
+        case UIInterfaceOrientationLandscapeRight:
+            [_lp setVideoOrientation:VIDEO_ORI_LANDSCAPE];
+            break;
+        default:
                 break;
         }
-    }
     
 }
 
