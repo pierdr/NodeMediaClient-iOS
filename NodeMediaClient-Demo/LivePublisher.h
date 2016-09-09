@@ -1,6 +1,6 @@
 //
 //  LivePublisher.h
-//  NodeMediaClient v1.2
+//  NodeMediaClient v1.2.2
 //
 //  Created by Mingliang Chen on 15/8/21.
 //  Copyright (c) 2015年 NodeMedia. All rights reserved.

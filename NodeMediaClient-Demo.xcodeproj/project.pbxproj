@@ -14,6 +14,7 @@
 		9D1D5E911B93581B00563396 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1D5E901B93581B00563396 /* MainViewController.m */; };
 		9D1D5E941B935DAD00563396 /* DefConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1D5E931B935DAD00563396 /* DefConfig.m */; };
 		9D3447F91D7023100001E670 /* NodePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D3447F81D7023100001E670 /* NodePlayerViewController.m */; };
+		9D3AAABC1D82581D002F1FEF /* NodeStreamerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D3AAABB1D82581D002F1FEF /* NodeStreamerViewController.m */; };
 		9D56CFBD1B8E0ED8005E3DEB /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D56CFBC1B8E0ED8005E3DEB /* PlayViewController.m */; };
 		9D7CAA951D02E06E00B2D432 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7CAA941D02E06E00B2D432 /* VideoToolbox.framework */; };
 		9DA611BB1B86BF5900B6179D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA611BA1B86BF5900B6179D /* main.m */; };
@@ -41,6 +42,9 @@
 		9D3447F61D7022C20001E670 /* NodePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodePlayer.h; sourceTree = "<group>"; };
 		9D3447F71D7023100001E670 /* NodePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodePlayerViewController.h; sourceTree = "<group>"; };
 		9D3447F81D7023100001E670 /* NodePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodePlayerViewController.m; sourceTree = "<group>"; };
+		9D3AAAB91D82581D002F1FEF /* NodeStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeStreamer.h; sourceTree = "<group>"; };
+		9D3AAABA1D82581D002F1FEF /* NodeStreamerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeStreamerViewController.h; sourceTree = "<group>"; };
+		9D3AAABB1D82581D002F1FEF /* NodeStreamerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeStreamerViewController.m; sourceTree = "<group>"; };
 		9D56CFBB1B8E0ED8005E3DEB /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
 		9D56CFBC1B8E0ED8005E3DEB /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
 		9D7CAA941D02E06E00B2D432 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
@@ -83,6 +87,10 @@
 		9D0F9F641B874D57009E89D8 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				9D0F9F581B874A8C009E89D8 /* LivePlayer.h */,
+				9D0F9F591B874A8C009E89D8 /* LivePublisher.h */,
+				9D3447F61D7022C20001E670 /* NodePlayer.h */,
+				9D3AAAB91D82581D002F1FEF /* NodeStreamer.h */,
 				9DDCA1381BB258AD00F69C0D /* libz.dylib */,
 				9DE750231B90862F0009CB20 /* KSHCaptureButton.h */,
 				9DE750241B90862F0009CB20 /* KSHCaptureButton.m */,
@@ -117,9 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				9D0F9F641B874D57009E89D8 /* libs */,
-				9D0F9F581B874A8C009E89D8 /* LivePlayer.h */,
-				9D0F9F591B874A8C009E89D8 /* LivePublisher.h */,
-				9D3447F61D7022C20001E670 /* NodePlayer.h */,
 				9DA611BC1B86BF5900B6179D /* AppDelegate.h */,
 				9DA611BD1B86BF5900B6179D /* AppDelegate.m */,
 				9D1D5E921B935DAD00563396 /* DefConfig.h */,
@@ -132,6 +137,8 @@
 				9D56CFBC1B8E0ED8005E3DEB /* PlayViewController.m */,
 				9D3447F71D7023100001E670 /* NodePlayerViewController.h */,
 				9D3447F81D7023100001E670 /* NodePlayerViewController.m */,
+				9D3AAABA1D82581D002F1FEF /* NodeStreamerViewController.h */,
+				9D3AAABB1D82581D002F1FEF /* NodeStreamerViewController.m */,
 				9DA611C21B86BF5900B6179D /* Main.storyboard */,
 				9DA611C51B86BF5900B6179D /* Images.xcassets */,
 				9DA611C71B86BF5900B6179D /* LaunchScreen.xib */,
@@ -197,7 +204,7 @@
 				TargetAttributes = {
 					9DA611B41B86BF5900B6179D = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 4XJ98G8FF6;
+						DevelopmentTeam = KH9H8WF8C5;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -249,6 +256,7 @@
 				9D1D5E911B93581B00563396 /* MainViewController.m in Sources */,
 				9DA611C11B86BF5900B6179D /* PublishViewController.m in Sources */,
 				9DE750251B90862F0009CB20 /* KSHCaptureButton.m in Sources */,
+				9D3AAABC1D82581D002F1FEF /* NodeStreamerViewController.m in Sources */,
 				9DA611BE1B86BF5900B6179D /* AppDelegate.m in Sources */,
 				9D1D5E941B935DAD00563396 /* DefConfig.m in Sources */,
 				9DA611BB1B86BF5900B6179D /* main.m in Sources */,
