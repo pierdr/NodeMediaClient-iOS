@@ -54,7 +54,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 * 支持主播停止推流后，播放端立即获取到结束状态（RTMP协议下）
 
 ##直播串流器
-v1.2.3新增NodeStreamer类,可用于户外环境下,具有RTSP协议的运动相机/无人机连接手机热点,通过手机4G网络串流到RTMP服务器.  
+v1.2.2新增NodeStreamer类,可用于户外环境下,具有RTSP协议的运动相机/无人机连接手机热点,通过手机4G网络串流到RTMP服务器.  
 手机端不进行编解码,只有网络IO,不占用CPU.注:当按Home或锁屏时,系统会禁止后台网络传输,该功能目前在iOS上太实用,只为了与Android端功能保持一致.
 
 ##双向音视频？
