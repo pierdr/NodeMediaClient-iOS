@@ -22,36 +22,38 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 * H.264/AAC 组合的RTMP协议音视频流发布
 * 全屏视频采集，720p原画质缩放
 * NEON指令集优化H.264软件编码器，性能强劲，兼容性极强
-* H.264支持Baseline及Main profile
-* 视频支持横屏16:9，竖屏9:16分辨率自动原画旋转
+* H.264支持Baseline, Main, High profile
+* iOS8以上支持视频硬编码
+* 支持手机旋转,横屏16:9，竖屏9:16分辨率自动输出横竖屏视频流
 * NEON优化AAC软件编码器，极少CPU占用，支持LC和HE profile，音质还原效果好
 * 支持环境背景噪音抑制，不再有沙沙声
 * 支持发布中途切换前后摄像头
 * 支持闪光灯开关
-* 支持全时自动对焦
+* 支持全时自动对焦与手动对焦切换
 * 支持单音频流发布
 * 支持发布中途来电保持网络流，暂停发布，挂机后继续发布
 * 支持预览摄像头后,任意时刻截图
-* 支持基于GPU加速的实时美颜滤镜
 * 支持定义为'live','record','append'的发布类型
 * 支持Adobe auth模式的鉴权验证 如rtmp://user:pass@server:port/app/name
-* iOS8以上支持视频硬编码
-
+* 内置基于GPU加速的5级磨皮美白滤镜
+* 支持动态设置视频码率
+* 支持视频码率自适应网络带宽
 
 ##直播播放特性
 * 只为RTMP协议优化的码流解析器，极短的分析时间，秒开RTMP视频流
 * NEON指令集优化的软件解码器，性能好，兼容性强
 * 支持的网络协议 RTMP/RTMPT/RTSP/HLS/HTTP-FLV
-* 支持的视频解码器:H.264, FLV, VP6
+* 支持的视频解码器:H.264, FLV, VP6, MPEG4
 * 支持的音频解码器:AAC, MP3, SPEEX, NELLYMOSER, ADPCM_SWF, G.711
 * OpenGL ES视频渲染
-* 全自动重连
+* 全自动网络异常重连
 * 支持播放中途来电保持网络流，暂停播放，挂机后继续播放
 * 支持播放中途任意时刻截图
 * 支持设置最大缓冲时长,杜绝延迟累计
 * 支持播放前设置receiveAudio,receiveVideo来控制只接收音频或视频流(需服务端实现，fms，red5支持)
 * 支持发送FCSubscribe命令，兼容国外Akamai, Edgecast , Limelight 等CDN
 * 支持主播停止推流后，播放端立即获取到结束状态（RTMP协议下）
+* 支持多路直播流同时播放
 
 ##直播串流器
 v1.2.2新增NodeStreamer类,可用于户外环境下,具有RTSP协议的运动相机/无人机连接手机热点,通过手机4G网络串流到RTMP服务器.  
