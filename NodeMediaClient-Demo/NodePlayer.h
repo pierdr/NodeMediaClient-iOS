@@ -1,6 +1,6 @@
 //
 //  NodePlayer.h
-//  NodeMediaClient v1.2.7
+//  NodeMediaClient v1.2.8
 //
 //  Created by Mingliang Chen on 16/8/15.
 //  Copyright © 2016年 NodeMedia. All rights reserved.
