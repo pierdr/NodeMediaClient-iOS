@@ -7,7 +7,7 @@ NodeMediaClient是为移动端应用量身打造的基于RTMP协议的流媒体�
 **xcode** 7以上
 
 ###iOS10适配说明
-你需要在info.plist文件，添加“NSContactsUsageDescription，NSMicrophoneUsageDescription”两个Key，并在Value中添加使用描述。如 ：
+你需要在info.plist文件，添加“NSCameraUsageDescription，NSMicrophoneUsageDescription”两个Key，并在Value中添加使用描述。如 ：
 ```
   <key>NSCameraUsageDescription</key>
   <string>此 App 需要您的同意才能访问摄像头</string>
