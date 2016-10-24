@@ -1,6 +1,6 @@
 //
 //  NodeStreamer.h
-//  NodeMediaClient v1.2.8
+//  NodeMediaClient v1.2.9
 //
 //  Created by Mingliang Chen on 16/9/8.
 //  Copyright © 2016年 NodeMedia. All rights reserved.
@@ -17,7 +17,7 @@
 @interface NodeStreamer : NSObject
 
 @property (nonatomic, weak) id<NodeStreamerDelegate> nodeStreamerDelegate;
-
+-(int) startNativeRateStreaming:(NSString*)inputUrl output:(NSString*)outputUrl;
 -(int) startStreamingWithInput:(NSString*)inputUrl output:(NSString*)outputUrl;
 -(int) stopStreaming;
 

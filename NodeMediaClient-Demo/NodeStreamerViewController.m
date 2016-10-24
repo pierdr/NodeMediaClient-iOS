@@ -38,8 +38,12 @@
     if(_isStarting) {
         [_ns stopStreaming];
     }else {
+//        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
+//        NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"demo.mp4"];
+//        [_ns startNativeRateStreaming:filePath output:_outputTF.text]; //强调使用输入地址原始帧率串流
+    
+        //开始串流,如果输入地址以本地绝对路径 "/" 符号开始,自动使用输入源原始帧率串流
         [_ns startStreamingWithInput:_inputTF.text output:_outputTF.text];
-        
     }
 }
 

@@ -8,7 +8,7 @@
 
 #import "PublishViewController.h"
 #import "LivePublisher.h"
-#include "KSHCaptureButton.h"
+#import "KSHCaptureButton.h"
 #import "DefConfig.h"
 
 
@@ -69,6 +69,15 @@
     
     //7. 设置硬编码开启,需要iOS版本8.0 , 如果低于8.0的系统,仍然使用软编码;
     [_lp setHWEnable:YES];
+    
+    
+    /**
+     * 开启视频编码动态自适应码率,默认关闭
+     * 开启后,sdk内部会根据发送缓冲队列的长度来动态调整视频码率以适应当前带宽
+     * 会在上传带宽不足,网络频繁波动等情况下触发码率降低,画质会变差,但流畅度得以保证.
+     * SDK内部会根据网络状况变优自动提升回设定码率.
+     */
+//    [_lp setDynamicRateEnable:YES];
     
     /*
      * 8. 开始预览摄像头画面，
@@ -167,6 +176,18 @@
             case 2103:
                 //截图保存失败
                 break;
+            case 2104:
+                //网络阻塞严重,无法继续推流,断开连接
+                break;
+            case 2300:
+                //摄像头和麦克风都不能打开,用户没有给予访问权限或硬件被占用
+                break;
+            case 2301:
+                //麦克风无法打开
+                break;
+            case 2302:
+                //摄像头无法打开
+                break;
             default:
                 break;
         }
@@ -174,13 +195,16 @@
 }
 
 - (IBAction)switchAction:(id)sender {
-    [UIView transitionWithView:sender duration:0.3f options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
-        [_lp switchCamera];
-        
-        //切换摄像头操作的同时关闭闪关灯,因为打开前置摄像头无法开闪光灯
-        [_lp setFlashEnable:NO];
-        [_flashBtn setImage:[UIImage imageNamed:@"SwitchFlash_off"] forState:UIControlStateNormal];
-    } completion:nil];
+    static Boolean b = false;
+    [_lp setCamEnable:b];
+    b = !b;
+//    [UIView transitionWithView:sender duration:0.3f options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
+//        [_lp switchCamera];
+//        
+//        //切换摄像头操作的同时关闭闪关灯,因为打开前置摄像头无法开闪光灯
+//        [_lp setFlashEnable:NO];
+//        [_flashBtn setImage:[UIImage imageNamed:@"SwitchFlash_off"] forState:UIControlStateNormal];
+//    } completion:nil];
     
 }
 
@@ -207,24 +231,28 @@
 }
 
 - (IBAction)flashAction:(id)sender {
-    int ret = 0;
-    if(_isFlashEnable) {
-        ret =[_lp setFlashEnable:NO];
-    }else {
-        ret =[_lp setFlashEnable:YES];
-    }
+    static Boolean a = false;
+    [_lp setMicEnable:a];
+    a = !a;
     
-    if(ret == 1 ) {
-        //闪光灯开启
-        [sender setImage:[UIImage imageNamed:@"SwitchFlash_on"] forState:UIControlStateNormal];
-        _isFlashEnable = YES;
-    }else if(ret == 0) {
-        //闪光灯关闭
-        [sender setImage:[UIImage imageNamed:@"SwitchFlash_off"] forState:UIControlStateNormal];
-        _isFlashEnable = NO;
-    }else {
-        //不支持开关闪光灯
-    }
+//    int ret = 0;
+//    if(_isFlashEnable) {
+//        ret =[_lp setFlashEnable:NO];
+//    }else {
+//        ret =[_lp setFlashEnable:YES];
+//    }
+//    
+//    if(ret == 1 ) {
+//        //闪光灯开启
+//        [sender setImage:[UIImage imageNamed:@"SwitchFlash_on"] forState:UIControlStateNormal];
+//        _isFlashEnable = YES;
+//    }else if(ret == 0) {
+//        //闪光灯关闭
+//        [sender setImage:[UIImage imageNamed:@"SwitchFlash_off"] forState:UIControlStateNormal];
+//        _isFlashEnable = NO;
+//    }else {
+//        //不支持开关闪光灯
+//    }
     
 }
 
