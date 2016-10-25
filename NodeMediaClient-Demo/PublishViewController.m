@@ -195,16 +195,13 @@
 }
 
 - (IBAction)switchAction:(id)sender {
-    static Boolean b = false;
-    [_lp setCamEnable:b];
-    b = !b;
-//    [UIView transitionWithView:sender duration:0.3f options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
-//        [_lp switchCamera];
-//        
-//        //切换摄像头操作的同时关闭闪关灯,因为打开前置摄像头无法开闪光灯
-//        [_lp setFlashEnable:NO];
-//        [_flashBtn setImage:[UIImage imageNamed:@"SwitchFlash_off"] forState:UIControlStateNormal];
-//    } completion:nil];
+    [UIView transitionWithView:sender duration:0.3f options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
+        [_lp switchCamera];
+        
+        //切换摄像头操作的同时关闭闪关灯,因为打开前置摄像头无法开闪光灯
+        [_lp setFlashEnable:NO];
+        [_flashBtn setImage:[UIImage imageNamed:@"SwitchFlash_off"] forState:UIControlStateNormal];
+    } completion:nil];
     
 }
 
@@ -231,28 +228,24 @@
 }
 
 - (IBAction)flashAction:(id)sender {
-    static Boolean a = false;
-    [_lp setMicEnable:a];
-    a = !a;
+    int ret = 0;
+    if(_isFlashEnable) {
+        ret =[_lp setFlashEnable:NO];
+    }else {
+        ret =[_lp setFlashEnable:YES];
+    }
     
-//    int ret = 0;
-//    if(_isFlashEnable) {
-//        ret =[_lp setFlashEnable:NO];
-//    }else {
-//        ret =[_lp setFlashEnable:YES];
-//    }
-//    
-//    if(ret == 1 ) {
-//        //闪光灯开启
-//        [sender setImage:[UIImage imageNamed:@"SwitchFlash_on"] forState:UIControlStateNormal];
-//        _isFlashEnable = YES;
-//    }else if(ret == 0) {
-//        //闪光灯关闭
-//        [sender setImage:[UIImage imageNamed:@"SwitchFlash_off"] forState:UIControlStateNormal];
-//        _isFlashEnable = NO;
-//    }else {
-//        //不支持开关闪光灯
-//    }
+    if(ret == 1 ) {
+        //闪光灯开启
+        [sender setImage:[UIImage imageNamed:@"SwitchFlash_on"] forState:UIControlStateNormal];
+        _isFlashEnable = YES;
+    }else if(ret == 0) {
+        //闪光灯关闭
+        [sender setImage:[UIImage imageNamed:@"SwitchFlash_off"] forState:UIControlStateNormal];
+        _isFlashEnable = NO;
+    }else {
+        //不支持开关闪光灯
+    }
     
 }
 
