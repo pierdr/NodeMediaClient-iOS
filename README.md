@@ -67,7 +67,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 
 ##直播串流器
 v1.2.2新增NodeStreamer类,可用于户外环境下,具有RTSP协议的运动相机/无人机连接手机热点,通过手机4G网络串流到RTMP服务器.  
-手机端不进行编解码,只有网络IO,不占用CPU.注:当按Home或锁屏时,系统会禁止后台网络传输,该功能目前在iOS上太实用,只为了与[Android端](https://github.com/NodeMedia/NodeMediaClient-Android)功能保持一致.  
+手机端不进行编解码,只有网络IO,不占用CPU.注:当按Home或锁屏时,系统会禁止后台网络传输,该功能目前在iOS上不实用,只为了与[Android端](https://github.com/NodeMedia/NodeMediaClient-Android)功能保持一致.  
 v1.2.9增加对本地mp4文件直接进行串流的支持.(注意:并不进行二次编码,不改变码率\清晰度,不调整视频方向.手机内置相机录像的视频码率非常大,竖向录制的视频是旋转90度的)
 
 ##双向音视频？
