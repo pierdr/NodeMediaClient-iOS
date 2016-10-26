@@ -29,6 +29,7 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder]) {
+        [self layoutIfNeeded];
         [self setupView];
     }
     return self;
