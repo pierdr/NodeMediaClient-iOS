@@ -1,6 +1,6 @@
 //
 //  NodePlayer.h
-//  NodeMediaClient v1.2.9
+//  NodeMediaClient v1.2.12
 //
 //  Created by Mingliang Chen on 16/8/15.
 //  Copyright © 2016年 NodeMedia. All rights reserved.
@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSString *swfUrl;
 @property (nonatomic) int bufferTime;
 @property (nonatomic) int maxBufferTime;
+@property (nonatomic) int timeOut;
 @property (nonatomic) bool receiveAudio;
 @property (nonatomic) bool receiveVideo;
 @property (nonatomic) bool subscribe;

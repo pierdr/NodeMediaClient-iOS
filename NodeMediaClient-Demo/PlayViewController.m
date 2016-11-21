@@ -45,6 +45,12 @@
      */
     [_lp setUIView:_playVideoView ContentMode:UIViewContentModeScaleAspectFill];
     
+    /**
+     * 设置连接超时时长,单位毫秒.默认一直等待.
+     * 连接部分RTMP服务器,握手并连接成功后,当播放一个不存在的流地址时,会一直等待下去.
+     * 如需超时,设置该值.超时后返回1006状态码.
+     */
+//    [_lp setTimeout:10*1000];
     
     //4.设置启动缓冲时长 单位毫秒,此参数关系视频流连接成功开始获取数据后缓冲多少毫秒后开始播放
     [_lp setBufferTime:[[DefConfig sharedInstance] getBufferTime]];

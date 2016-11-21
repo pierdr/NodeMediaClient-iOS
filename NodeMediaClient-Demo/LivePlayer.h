@@ -1,6 +1,6 @@
 //
 //  LivePlayer.h
-//  NodeMediaClient v1.2.9
+//  NodeMediaClient v1.2.12
 //
 //  Created by Mingliang Chen on 15/8/21.
 //  Copyright (c) 2015年 NodeMedia. All rights reserved.
@@ -23,6 +23,13 @@
 @property (nonatomic, strong) NSString *swfUrl;
 @property (nonatomic) int bufferTime;
 @property (nonatomic) int maxBufferTime;
+
+/**
+ * 连接超时时间,只在connect阶段
+ *
+ */
+@property (nonatomic) int timeout;
+
 
 /**
  * 是否通过发送receiveAudio 和 receiveVideo command 来控制接受音视频流
