@@ -15,9 +15,15 @@
 -(void)putPublishUrl:(NSString*)publishUrl;
 -(void)putBufferTime:(int)bufferTime;
 -(void)putMaxBufferTime:(int)maxBufferTime;
+-(void)putVodPlayUrl:(NSString*)vodPlayUrl;
+-(void)putVodBufferTime:(int)vodBufferTime;
+-(void)putVodMaxBufferTime:(int)vodMaxBufferTime;
 
 -(NSString*)getPlayUrl;
 -(NSString*)getPublishUrl;
 -(int)getBufferTime;
 -(int)getMaxBufferTime;
+-(NSString*)getVodPlayUrl;
+-(int)getVodBufferTime;
+-(int)getVodMaxBufferTime;
 @end

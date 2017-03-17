@@ -52,6 +52,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 ##直播播放特性
 * 只为RTMP协议优化的码流解析器，极短的分析时间，秒开RTMP视频流
 * NEON指令集优化的软件解码器，性能好，兼容性强
+* 视频编码:H.264/H.263/MPEG4,音频编码:AAC/AC3/MP3 支持硬解码
 * 支持的网络协议 RTMP/RTMPT/RTSP/HLS/HTTP-FLV
 * 支持的视频解码器:H.264, FLV, VP6, MPEG4
 * 支持的音频解码器:AAC, MP3, SPEEX, NELLYMOSER, ADPCM_SWF, G.711
@@ -78,14 +79,16 @@ v1.2.9增加对本地mp4文件直接进行串流的支持.(注意:并不进行�
  * <s>rtmp://[lssv6.nodemedia.cn]/live/demo</s>
  * <s>rtmp://[2001:19f0:7000:80b5:5400:00ff:fe27:3f9b]/live/demo</s>
 
-## v1.x 版本主要开发计划
- * 实时美颜发布
- * 4:3分辨率发布
- * 多播
- * 硬件编解码
- * 新增实现：用于1对1音视频的开发类，包含回音消除
- * 新增实现：用于点播的类
- * 发布端更多滤镜特效,大眼,瘦脸
+##视频点播
+v2.0.0版本开始支持视频点播
+ * 支持的协议格式 HTTP/FILE
+ * 支持的封装格式 MP4/FLV/AVI/MPEGTS
+ * 支持的视频格式 H.264/H.263/FLV/MPEG4/MJPEG
+ * 支持的音频格式 AAC/AC3/MP3/NELLYMOSER/SPEEX/G.711
+ * 播放/暂停/快进/时长等基本操作
+ * 视频编码:H.264/H.263/MPEG4,音频编码:AAC/AC3/MP3 支持硬解码  
+ 
+![img](https://raw.githubusercontent.com/NodeMedia/NodeMediaClient-iOS/v2/vodplay.jpg)
 
 ##文档
 http://www.nodemedia.cn/doc

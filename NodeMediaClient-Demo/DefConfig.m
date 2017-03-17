@@ -45,6 +45,22 @@
     [self.defaults synchronize];
 }
 
+-(void)putVodPlayUrl:(NSString*)vodPlayUrl {
+    [self.defaults setObject:vodPlayUrl forKey:@"vodPlayUrl"];
+    [self.defaults synchronize];
+}
+
+-(void)putVodBufferTime:(int)vodBufferTime {
+    [self.defaults setObject:@(vodBufferTime) forKey:@"vodBufferTime"];
+    [self.defaults synchronize];
+}
+
+-(void)putVodMaxBufferTime:(int)vodMaxBufferTime {
+    [self.defaults setObject:@(vodMaxBufferTime) forKey:@"vodMaxBufferTime"];
+    [self.defaults synchronize];
+}
+
+
 -(NSString*)getPlayUrl {
     return [self.defaults stringForKey:@"playUrl"];
 }
@@ -61,4 +77,15 @@
     return [[self.defaults valueForKey:@"maxBufferTime"] intValue];
 }
 
+-(NSString*)getVodPlayUrl {
+     return [self.defaults stringForKey:@"vodPlayUrl"];
+}
+
+-(int)getVodBufferTime {
+     return [[self.defaults valueForKey:@"vodBufferTime"] intValue];
+}
+
+-(int)getVodMaxBufferTime {
+     return [[self.defaults valueForKey:@"vodMaxBufferTime"] intValue];
+}
 @end
