@@ -88,7 +88,7 @@ v2.0.0版本开始支持视频点播
  * 播放/暂停/快进/时长等基本操作
  * 视频编码:H.264/H.263/MPEG4,音频编码:AAC/AC3/MP3 支持硬解码  
  
-![img](https://raw.githubusercontent.com/NodeMedia/NodeMediaClient-iOS/v2/vodplay.jpg)
+![img](https://raw.githubusercontent.com/NodeMedia/NodeMediaClient-iOS/v2.x/vodplay.jpg)
 
 ##文档
 http://www.nodemedia.cn/doc
