@@ -1,12 +1,12 @@
-#NodeMediaClient-iOS
+# NodeMediaClient-iOS
 
-##简介
+## 简介
 NodeMediaClient是为移动端应用量身打造的基于RTMP协议的流媒体直播系统。通过集成本SDK，只需几个简单API调用，便可实现一套完整的直播流媒体应用基础。包含了流媒体应用中：『采集->编码->传输->解码->播放』的所有步骤。
 
-##编译环境
+## 编译环境
 **xcode** 7以上
 
-###iOS10适配说明
+### iOS10适配说明
 你需要在info.plist文件，添加“NSCameraUsageDescription，NSMicrophoneUsageDescription”两个Key，并在Value中添加使用描述。如 ：
 ```
   <key>NSCameraUsageDescription</key>
@@ -16,19 +16,19 @@ NodeMediaClient是为移动端应用量身打造的基于RTMP协议的流媒体�
 ```
 否则应用直接闪退崩溃
 
-##支持的系统平台
+## 支持的系统平台
 **iOS** 7.0及以上
 
-##支持的CPU架构
+## 支持的CPU架构
 **iOS** armv7 armv7s arm64 i386 x86_64  
 
-##支持的流媒体服务端
+## 支持的流媒体服务端
 fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Server及其他标准RTMP协议服务端
 
-##支持的流媒体云服务器
+## 支持的流媒体云服务器
 [奥点云](http://www.aodianyun.com/)及其他标准RTMP协议云服务器
 
-##直播发布特性
+## 直播发布特性
 * H.264/AAC 组合的RTMP协议音视频流发布
 * 全屏视频采集，720p原画质缩放
 * NEON指令集优化H.264软件编码器，性能强劲，兼容性极强
@@ -49,7 +49,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 * 支持动态设置视频码率
 * 支持视频码率自适应网络带宽
 
-##直播播放特性
+## 直播播放特性
 * 只为RTMP协议优化的码流解析器，极短的分析时间，秒开RTMP视频流
 * NEON指令集优化的软件解码器，性能好，兼容性强
 * 视频编码:H.264/H.263/MPEG4,音频编码:AAC/AC3/MP3 支持硬解码
@@ -66,20 +66,20 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 * 支持主播停止推流后，播放端立即获取到结束状态（RTMP协议下）
 * 支持多路直播流同时播放
 
-##直播串流器
+## 直播串流器
 v1.2.2新增NodeStreamer类,可用于户外环境下,具有RTSP协议的运动相机/无人机连接手机热点,通过手机4G网络串流到RTMP服务器.  
 手机端不进行编解码,只有网络IO,不占用CPU.注:当按Home或锁屏时,系统会禁止后台网络传输,该功能目前在iOS上不实用,只为了与[Android端](https://github.com/NodeMedia/NodeMediaClient-Android)功能保持一致.  
 v1.2.9增加对本地mp4文件直接进行串流的支持.(注意:并不进行二次编码,不改变码率\清晰度,不调整视频方向.手机内置相机录像的视频码率非常大,竖向录制的视频是旋转90度的)
 
-##双向音视频？
+## 双向音视频？
 支持一个页面内同时发布视频和播放视频，但由于有回音问题，建议这种应用使用耳机，后期的版本会考虑回音消除
 
-##ipv6
+## ipv6
 苹果2016年6月新政策规定新上架app必须支持ipv6-only。经过验证，我们已发布的版本均支持ipv6地址或解析到ipv6地址的域名进行直播。可使用<s>下面的地址验证，（注：需要测试环境具有公网ipv6环境）</s> 已失效,请自行搭建监听IPV6地址的Nginx-Rtmp测试
  * <s>rtmp://[lssv6.nodemedia.cn]/live/demo</s>
  * <s>rtmp://[2001:19f0:7000:80b5:5400:00ff:fe27:3f9b]/live/demo</s>
 
-##视频点播
+## 视频点播
 v2.0.0版本开始支持视频点播
  * 支持的协议格式 HTTP/FILE
  * 支持的封装格式 MP4/FLV/AVI/MPEGTS
@@ -90,10 +90,10 @@ v2.0.0版本开始支持视频点播
  
 ![img](https://raw.githubusercontent.com/NodeMedia/NodeMediaClient-iOS/v2.x/vodplay.jpg)
 
-##文档
+## 文档
 http://www.nodemedia.cn/doc
 
-##商用授权
+## 商用授权
 程序发布需商用授权，业务咨询请联系  
 QQ:281269007  
 Email:service@nodemedia.cn
