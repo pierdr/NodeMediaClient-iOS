@@ -38,8 +38,8 @@
     [self.view addSubview:_controlView];
     
     [_np setInputUrl:[[DefConfig sharedInstance] getVodPlayUrl]]; //输入地址,可以是HTTP的点播地址,也可以是本地文件路径
-    [_np setBufferTime:[[DefConfig sharedInstance] getVodBufferTime]]; //设置启动缓冲时长
-    [_np setMaxBufferTime:[[DefConfig sharedInstance] getVodMaxBufferTime]]; //设置最大缓冲时长,当填满时,网络流点播就不再下载.避免过多的数据被提前下载缓冲.
+    [_np setBufferTime:[[DefConfig sharedInstance] getVodBufferTime]]; //设置启动缓冲时长 建议1000毫秒
+    [_np setMaxBufferTime:[[DefConfig sharedInstance] getVodMaxBufferTime]]; //设置最大缓冲时长,当填满时,网络流点播就不再下载.避免过多的数据被提前下载缓冲.建议20*1000毫秒
     [_np setNodePlayerDelegate:self];
     [_np setContentMode:UIViewContentModeScaleAspectFit];
     [_np start];
