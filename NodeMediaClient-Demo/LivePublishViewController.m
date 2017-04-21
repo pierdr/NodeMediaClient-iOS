@@ -212,9 +212,7 @@
         //        _lp.publishType = PUBLISH_TYPE_RECORD;    //设置为发布录制模式 fms与red5兼容
         
         //开始发布 普通模式
-//        [_lp startPublish:[[DefConfig sharedInstance] getPublishUrl]];
-        [_lp startPublish:@"rtmp://192.168.0.10/live/demo1"];
-        
+        [_lp startPublish:[[DefConfig sharedInstance] getPublishUrl]];
     }
 }
 

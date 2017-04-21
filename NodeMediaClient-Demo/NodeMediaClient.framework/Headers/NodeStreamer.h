@@ -1,6 +1,6 @@
 //
 //  NodeStreamer.h
-//  NodeMediaClient v1.2.14
+//  NodeMediaClient
 //
 //  Created by Mingliang Chen on 16/9/8.
 //  Copyright © 2016年 NodeMedia. All rights reserved.

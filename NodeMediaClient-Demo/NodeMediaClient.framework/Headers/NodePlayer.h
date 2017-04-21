@@ -1,6 +1,6 @@
 //
 //  NodePlayer.h
-//  NodeMediaClient v2.0.2
+//  NodeMediaClient
 //
 //  Created by Mingliang Chen on 16/12/29.
 //  Copyright © 2016年 Mingliang Chen. All rights reserved.
@@ -46,7 +46,7 @@
 @property (nonatomic) int autoReconnectWaitTimeout;
 
 
-///连接或数据为空超时等待时间,单位毫秒,默认0. 当为0时一直等待
+///连接或数据为空超时等待时间,单位毫秒,默认10000. 当为0时,永久等待
 @property (nonatomic) int connectWaitTimeout;
 
 /**
