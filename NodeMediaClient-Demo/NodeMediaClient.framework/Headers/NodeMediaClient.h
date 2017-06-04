@@ -3,7 +3,7 @@
 //  NodeMediaClient
 //
 // v2.0.3 - 2017/4/17
-//
+// v2.1.0 - 2017/5/22
 //  Created by Mingliang Chen on 16/12/29.
 //  Copyright © 2016年 Mingliang Chen. All rights reserved.
 //
@@ -20,5 +20,5 @@ FOUNDATION_EXPORT const unsigned char NodeMediaClientVersionString[];
 
 
 #import <NodeMediaClient/NodePlayer.h>
-#import <NodeMediaClient/LivePublisher.h>
+#import <NodeMediaClient/NodePublisher.h>
 #import <NodeMediaClient/NodeStreamer.h>

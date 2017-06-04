@@ -7,27 +7,28 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+
 
 @protocol NodePlayerDelegate
 
--(void) onEventCallback:(id)sender event:(int)event msg:(NSString*)msg;
+-(void) onEventCallback:(nonnull id)sender event:(int)event msg:(nonnull NSString*)msg;
 
 @end
 
+@class UIView;
 @interface NodePlayer : NSObject
 
-@property (nonatomic, weak) id<NodePlayerDelegate> nodePlayerDelegate;
+@property (nullable,nonatomic, weak) id<NodePlayerDelegate> nodePlayerDelegate;
 
 #pragma mark 参数
 ///音视频流地址,也可以是本地文件绝对路径
-@property (nonatomic, strong) NSString *inputUrl;
+@property (nonnull, nonatomic, strong) NSString *inputUrl;
 
 ///rtmp协议连接下附加pageurl参数
-@property (nonatomic, strong) NSString *pageUrl;
+@property (nonnull,nonatomic, strong) NSString *pageUrl;
 
 ///rtmp协议连接下附加swfUrl参数
-@property (nonatomic, strong) NSString *swfUrl;
+@property (nonnull,nonatomic, strong) NSString *swfUrl;
 
 ///启动缓冲区时长,单位毫秒.默认值 500
 @property (nonatomic) int bufferTime;
@@ -65,7 +66,7 @@
 /**
  * @brief 是否开始硬件解码加速,开始播放前设置有效,默认开启.
  *
- * 当视频编码为H.264\MPEG4\H.263,音频编码为AAC\AC3\MP3时,可以使用硬件解码加速来降低cpu占用,降低能耗.\
+ * 当视频编码为H.264\MPEG4\H.263,可以使用硬件解码加速来降低cpu占用,降低能耗.
  * 
  * 当初始化失败,或者系统版本不支持时,自动转为软解码.
  */
@@ -86,10 +87,22 @@
 ///是否以subscribe模式播放视频
 @property (nonatomic) BOOL subscribe;
 
+/**
+ * @brief 启用本地RTMP服务模式进行播放,可以实现去中心化的单/双向点对点音视频通讯.
+ * 例如:播放rtmp://0.0.0.0/stream_name 然后等待远端推送stream_name流到当前IP地址
+ * 默认监听1935端口,也可改为其它,推送端响应改为其它
+ * 当进行双向音频时,声音为扬声器外放.需要推送端都采用NodePublisher的speex编码,自动开启回音消除
+ * 注意:
+ *  1.该功能无法穿透NAT,仅建议用于局域网内通讯.
+ *  2.呼叫/接听/挂断协议需另外的消息通讯
+ *  3.一次只能建立一个通讯
+ * 若需实现公网上的P2P通讯,请关注本项目后期实现的RTMFP协议支持
+ */
+@property (nonatomic) BOOL localRTMP;
 
 #pragma mark 属性
 ///视频显示view,作为子视图插入
-@property (nonatomic, readonly, weak) UIView *view;
+@property (nullable,nonatomic, readonly, weak) UIView *view;
 
 ///获取当前视频总时长,单位毫秒.直播流为0
 -(long) getDuration;
