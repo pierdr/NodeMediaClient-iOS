@@ -73,6 +73,15 @@ typedef void (^CapturePictureBlock)(UIImage * _Nullable image);
 ///rtmp协议连接下附加swfUrl参数
 @property (nonnull, nonatomic, strong) NSString *swfUrl;
 
+/**
+ * @brief rtmpdump 风格的connect参数
+ * Append arbitrary AMF data to the Connect message. The type must be B for Boolean, N for number, S for string, O for object, or Z for null.
+ * For Booleans the data must be either 0 or 1 for FALSE or TRUE, respectively. Likewise for Objects the data must be 0 or 1 to end or begin an object, respectively.
+ * Data items in subobjects may be named, by prefixing the type with 'N' and specifying the name before the value, e.g. NB:myFlag:1.
+ * This option may be used multiple times to construct arbitrary AMF sequences. E.g.
+ */
+@property (nonnull, nonatomic, strong) NSString *connArgs;
+
 ///自动重连超时等待时间,单位毫秒,默认2000. 当为0时不自动重连
 @property (nonatomic) NSUInteger autoReconnectWaitTimeout;
 

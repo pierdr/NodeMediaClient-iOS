@@ -103,6 +103,7 @@
     if(_isStarting) {
         [_np stop];
     } else {
+        [_np setConnArgs:@"S:info O:1 NS:uid:10012 NB:vip:1 NN:num:209.12 O:0"]; //类似ActionScript NetConnection.connect()时发送参数,rtmpdump风格
         [_np setOutputUrl:[[DefConfig sharedInstance] getPublishUrl]];
         [_np start];
     }

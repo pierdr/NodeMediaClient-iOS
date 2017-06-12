@@ -25,10 +25,19 @@
 @property (nonnull, nonatomic, strong) NSString *inputUrl;
 
 ///rtmp协议连接下附加pageurl参数
-@property (nonnull,nonatomic, strong) NSString *pageUrl;
+@property (nonnull, nonatomic, strong) NSString *pageUrl;
 
 ///rtmp协议连接下附加swfUrl参数
-@property (nonnull,nonatomic, strong) NSString *swfUrl;
+@property (nonnull, nonatomic, strong) NSString *swfUrl;
+
+/**
+ * @brief rtmpdump 风格的connect参数
+ * Append arbitrary AMF data to the Connect message. The type must be B for Boolean, N for number, S for string, O for object, or Z for null. 
+ * For Booleans the data must be either 0 or 1 for FALSE or TRUE, respectively. Likewise for Objects the data must be 0 or 1 to end or begin an object, respectively. 
+ * Data items in subobjects may be named, by prefixing the type with 'N' and specifying the name before the value, e.g. NB:myFlag:1. 
+ * This option may be used multiple times to construct arbitrary AMF sequences. E.g.
+ */
+@property (nonnull, nonatomic, strong) NSString *connArgs;
 
 ///启动缓冲区时长,单位毫秒.默认值 500
 @property (nonatomic) int bufferTime;
