@@ -87,7 +87,7 @@ v1.2.9增加对本地mp4文件直接进行串流的支持.(注意:并不进行�
  * <s>rtmp://[2001:19f0:7000:80b5:5400:00ff:fe27:3f9b]/live/demo</s>
 
 ## 视频点播
-v2.0.0版本开始支持视频点播
+### v2.0.0版本开始支持视频点播
  * 支持的协议格式 HTTP/FILE
  * 支持的封装格式 MP4/FLV/AVI/MPEGTS
  * 支持的视频格式 H.264/H.263/FLV/MPEG4/MJPEG
@@ -102,7 +102,14 @@ v2.0.0版本开始支持视频点播
  * H.265直播传输
  * 仿ActionScript3 NetConnect.call() 客户端服务端方法互调
  * 完善RTMFP协议支持(UDP,P2P,NETGROUP)
- 
+
+## H.265直播
+目前v2.1.3支持非Adobe官方协议下H.265直播播放  
+服务端需要修改codecId进行支持,NodeMedia将会在近期推出更新支持[nginx-rtmp-win32](https://github.com/illuspas/nginx-rtmp-win32)  
+推流端需要修改ffmpeg进行支持,NodeMedia将会在近期推出更新支持[ffmpeg-hw-win32](https://github.com/illuspas/nginx-rtmp-win32)  
+目前暂不支持手机端推流,x265软编码性能消耗较大,解决方案为手机端仍然以H.264推送到服务端,服务端进行H.264-->H.265实时转码,播放端解码H.265视频.  
+经测试,在相同分辨率帧率清晰度的情况下,码率减小一半以上.  
+
 ## 商用授权
 商业软件需购买授权,业务咨询\定制开发,请联系  
 QQ:281269007  
