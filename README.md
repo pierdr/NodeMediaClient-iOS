@@ -106,7 +106,7 @@ v1.2.9增加对本地mp4文件直接进行串流的支持.(注意:并不进行�
 ## H.265直播
 目前v2.1.3支持非Adobe官方协议下H.265直播播放  
 服务端需要修改codecId进行支持,NodeMedia将会在近期推出更新支持[nginx-rtmp-win32](https://github.com/illuspas/nginx-rtmp-win32)  
-推流端需要修改ffmpeg进行支持,NodeMedia将会在近期推出更新支持[ffmpeg-hw-win32](https://github.com/illuspas/nginx-rtmp-win32)  
+推流端需要修改ffmpeg进行支持,NodeMedia将会在近期推出更新支持[ffmpeg-hw-win32](https://github.com/illuspas/ffmpeg-hw-win32)  
 目前暂不支持手机端推流,x265软编码性能消耗较大,解决方案为手机端仍然以H.264推送到服务端,服务端进行H.264-->H.265实时转码,播放端解码H.265视频.  
 经测试,在相同分辨率帧率清晰度的情况下,码率减小一半以上.  
 支持RTSP协议下海康摄像头Smart265的视频流
