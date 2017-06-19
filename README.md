@@ -118,4 +118,4 @@ Email:service@nodemedia.cn
 
 ## 免费授权(需审核)
 学生,个人开源项目可免费申请授权版,请联系  
-Email:service@nodemedia.cn
+Email:free@nodemedia.cn
