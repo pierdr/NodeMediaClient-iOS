@@ -113,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				9D4322FF1E4853C50075262A /* TYVideoPlayer */,
+				9D4322D41E481A5F0075262A /* AppDelegate.h */,
+				9D4322D51E481A5F0075262A /* AppDelegate.m */,
 				9D4322F91E4853C00075262A /* DefConfig.h */,
 				9D4322FA1E4853C00075262A /* DefConfig.m */,
 				9D4322FB1E4853C00075262A /* KSHCaptureButton.h */,
@@ -161,8 +163,6 @@
 		9D4322FF1E4853C50075262A /* TYVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				9D4322D41E481A5F0075262A /* AppDelegate.h */,
-				9D4322D51E481A5F0075262A /* AppDelegate.m */,
 				9D4323001E4854110075262A /* TYLoadingView.h */,
 				9D4323011E4854110075262A /* TYLoadingView.m */,
 				9D4323031E4854110075262A /* TYVideoBottomView.h */,
