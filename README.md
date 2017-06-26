@@ -72,6 +72,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 * 支持发送FCSubscribe命令，兼容国外Akamai, Edgecast , Limelight 等CDN
 * 支持主播停止推流后，播放端立即获取到结束状态（RTMP协议下）
 * 支持多路直播流同时播放
+* 支持RTMP 302重定向
 
 ## 直播串流器
 v1.2.2新增NodeStreamer类,可用于户外环境下,具有RTSP协议的运动相机/无人机连接手机热点,通过手机4G网络串流到RTMP服务器.  
