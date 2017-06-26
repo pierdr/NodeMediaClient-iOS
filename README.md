@@ -75,7 +75,6 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 * 支持播放中途来电保持网络流，暂停播放，挂机后继续播放
 * 支持播放中途任意时刻截图
 * 支持设置最大缓冲时长,杜绝延迟累计
-* 支持主播停止推流后，播放端立即获取到结束状态（RTMP协议下）
 * 支持多路直播流同时播放
 
 ## 直播串流器
