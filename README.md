@@ -31,6 +31,15 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 ## 支持的流媒体云服务器
 [奥点云](http://www.aodianyun.com/)及其他标准RTMP协议云服务器
 
+## RTMP协议特性
+* 支持定义为'live','record','append'的发布类型
+* 支持Adobe auth模式的鉴权验证 如rtmp://user:pass@server:port/app/name
+* 支持播放前设置receiveAudio,receiveVideo来控制只接收音频或视频流(需服务端实现，fms，red5支持)
+* 支持发送FCSubscribe命令，兼容国外Akamai, Edgecast , Limelight 等CDN
+* 支持设置SwfUrl和PageUrl
+* 支持设置Connect Arguments (rtmpdump风格)
+* 支持RTMP 302重定向(AMS,Wowza模式)
+
 ## 直播发布特性
 * H.264/AAC 组合的RTMP协议音视频流发布
 * 全屏视频采集，720p原画质缩放
@@ -48,8 +57,6 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 * 支持单音频流发布
 * 支持发布中途来电保持网络流，暂停发布，挂机后继续发布
 * 支持预览摄像头后,任意时刻截图
-* 支持定义为'live','record','append'的发布类型
-* 支持Adobe auth模式的鉴权验证 如rtmp://user:pass@server:port/app/name
 * 内置基于GPU加速的5级磨皮美白滤镜
 * 支持动态设置视频码率
 * 支持视频码率自适应网络带宽
@@ -68,19 +75,13 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 * 支持播放中途来电保持网络流，暂停播放，挂机后继续播放
 * 支持播放中途任意时刻截图
 * 支持设置最大缓冲时长,杜绝延迟累计
-* 支持播放前设置receiveAudio,receiveVideo来控制只接收音频或视频流(需服务端实现，fms，red5支持)
-* 支持发送FCSubscribe命令，兼容国外Akamai, Edgecast , Limelight 等CDN
 * 支持主播停止推流后，播放端立即获取到结束状态（RTMP协议下）
 * 支持多路直播流同时播放
-* 支持RTMP 302重定向(AMS,Wowza模式)
 
 ## 直播串流器
 v1.2.2新增NodeStreamer类,可用于户外环境下,具有RTSP协议的运动相机/无人机连接手机热点,通过手机4G网络串流到RTMP服务器.  
 手机端不进行编解码,只有网络IO,不占用CPU.注:当按Home或锁屏时,系统会禁止后台网络传输,该功能目前在iOS上不实用,只为了与[Android端](https://github.com/NodeMedia/NodeMediaClient-Android)功能保持一致.  
 v1.2.9增加对本地mp4文件直接进行串流的支持.(注意:并不进行二次编码,不改变码率\清晰度,不调整视频方向.手机内置相机录像的视频码率非常大,竖向录制的视频是旋转90度的)
-
-## 双向音视频？
-支持一个页面内同时发布视频和播放视频，但由于有回音问题，建议这种应用使用耳机，后期的版本会考虑回音消除
 
 ## ipv6
 苹果2016年6月新政策规定新上架app必须支持ipv6-only。经过验证，我们已发布的版本均支持ipv6地址或解析到ipv6地址的域名进行直播。可使用<s>下面的地址验证，（注：需要测试环境具有公网ipv6环境）</s> 已失效,请自行搭建监听IPV6地址的Nginx-Rtmp测试
