@@ -62,6 +62,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 * 支持视频码率自适应网络带宽
 * 支持GPU算法的镜头缩放,兼容性好
 * 全自动网络异常重连
+* 不依赖\不冲突GPUImage
 
 ## 直播播放特性
 * 只为RTMP协议优化的码流解析器，极短的分析时间，秒开RTMP视频流
