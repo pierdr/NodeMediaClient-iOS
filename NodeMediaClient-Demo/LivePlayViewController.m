@@ -20,10 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _np = [[NodePlayer alloc ] init];
-    // _np.view为视频显示view,直接当作子视图插入即可
-    _np.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    _np.view.frame = self.view.bounds;
-    [self.view addSubview:_np.view];
+    
     
     UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     [closeBtn setTitle:@"Close" forState:UIControlStateNormal];
@@ -35,6 +32,7 @@
     [_np setInputUrl:[[DefConfig sharedInstance] getPlayUrl]]; //设置输入流地址,可以是RTMP/RTSP/HTTP-FLV/HLS等协议
     [_np setBufferTime:[[DefConfig sharedInstance] getBufferTime]];//设置首屏启动缓冲时长,不是实际等待时间,而是缓冲区存放的时长,建议100-500毫秒
     [_np setMaxBufferTime:[[DefConfig sharedInstance] getMaxBufferTime]];//设置缓冲区最大时长,该值与最大延迟有直接关系.因网络抖动\来电等因素引起的累计延迟,会根据该值的大小自动抛弃过期数据.建议1000-2000毫秒
+    [_np setPlayerView:self.view];//设置视频播放视图
     [_np setContentMode:UIViewContentModeScaleAspectFit];//设置画面填充模式.
     [_np setHwEnable:YES];//设置开启硬解码,默认已开启,可以不调用.系统版本不支持或硬解码器初始化失败,自动转为软解.
     [_np setConnArgs:@"S:info O:1 NS:uid:10012 NB:vip:1 NN:num:209.12 O:0"]; //类似ActionScript NetConnection.connect()时发送参数,rtmpdump风格

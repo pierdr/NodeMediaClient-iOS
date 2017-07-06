@@ -39,6 +39,8 @@
  */
 @property (nonnull, nonatomic, strong) NSString *connArgs;
 
+@property (nullable, nonatomic, weak) UIView *playerView;
+
 ///启动缓冲区时长,单位毫秒.默认值 500
 @property (nonatomic) int bufferTime;
 
@@ -110,8 +112,6 @@
 @property (nonatomic) BOOL localRTMP;
 
 #pragma mark 属性
-///视频显示view,作为子视图插入
-@property (nullable,nonatomic, readonly, weak) UIView *view;
 
 ///获取当前视频总时长,单位毫秒.直播流为0
 -(long) getDuration;
@@ -129,6 +129,7 @@
 -(BOOL) isLive;
 
 #pragma mark 方法
+
 ///开始播放
 -(int) start;
 

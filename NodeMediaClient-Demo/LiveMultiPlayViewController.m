@@ -21,22 +21,25 @@
     [super viewDidLoad];
     
     _np1 = [[NodePlayer alloc] init];
-    _np1.view.frame = self.view.bounds;
-    [self.view addSubview:_np1.view];
+    UIView *view1 = [[UIView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:view1];
+    [_np1 setPlayerView:view1];
     [_np1 setInputUrl:@"rtmp://xyplay.nodemedia.cn/live/stream_1001"];
     [_np1 setNodePlayerDelegate:self];
     [_np1 start];
     
     _np2 = [[NodePlayer alloc] init];
-    _np2.view.frame = CGRectMake(20, 300, 90, 160);
-     [self.view addSubview:_np2.view];
+    UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(20, 300, 90, 160)];
+    [self.view addSubview:view2];
+    [_np2 setPlayerView:view2];
     [_np2 setInputUrl:@"rtmp://xyplay.nodemedia.cn/live/stream_1002"];
     [_np2 setNodePlayerDelegate:self];
     [_np2 start];
     
     _np3 = [[NodePlayer alloc] init];
-    _np3.view.frame = CGRectMake(200, 300, 90, 160);
-    [self.view addSubview:_np3.view];
+    UIView *view3 = [[UIView alloc] initWithFrame:CGRectMake(200, 300, 90, 160)];
+    [self.view addSubview:view3];
+    [_np2 setPlayerView:view3];
     [_np3 setInputUrl:@"rtmp://xyplay.nodemedia.cn/live/stream_1003"];
     [_np3 setNodePlayerDelegate:self];
     [_np3 start];
