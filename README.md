@@ -118,6 +118,6 @@ v1.2.9增加对本地mp4文件直接进行串流的支持.(注意:并不进行�
 QQ:281269007  
 Email:service@nodemedia.cn
 
-## 免费授权(需审核)
-学生,个人开源项目可免费申请授权版,请联系  
-Email:free@nodemedia.cn
+## 跨平台开源流媒体服务端(开发测试用)
+[Node-Media-Server](https://github.com/illuspas/Node-Media-Server) 
+基于Node.JS开发, 跨平台/高性能, 支持RTMP协议推流,RTMP/HTTP-FLV/WebSocket-FLV播放, 内置推流鉴权/播放防盗链/GOP缓存急速秒开.
