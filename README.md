@@ -105,7 +105,8 @@ v1.2.9增加对本地mp4文件直接进行串流的支持.(注意:并不进行�
  * 完善RTMFP协议支持(UDP,P2P,NETGROUP)
 
 ## H.265直播
-目前v2.1.3之后的版本支持非Adobe官方协议下H.265直播播放  
+目前v2.1.3之后的版本支持非Adobe官方协议下H.265直播播放  
+
 Windows测试服务端支持 
  * [nginx-rtmp-win32](https://github.com/illuspas/nginx-rtmp-win32)  
  * [Node-Media-Server](https://github.com/illuspas/Node-Media-Server)
