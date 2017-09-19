@@ -68,59 +68,60 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Ser
 * 不依赖\不冲突GPUImage
 
 ## 直播播放特性
-* 只为RTMP协议优化的码流解析器，极短的分析时间，秒开RTMP视频流
+* 专为RTMP/RTSP等直播协议优化的码流解析器，极短的分析时间，秒开视频流
 * NEON指令集优化的软件解码器，性能好，兼容性强
-* 视频编码:H.264/H.263/MPEG4,音频编码:AAC/AC3/MP3 支持硬解码
-* 支持的网络协议 RTMP/RTMPT/RTSP/HLS/HTTP-FLV
+* 视频编码:H.264/H.263/MPEG4支持硬解码
+* 支持的网络协议 RTMP/RTMPT/RTMPE/RTSP/HLS/HTTP-FLV
 * 支持的视频解码器:H.264, FLV, VP6, MPEG4
 * 支持的音频解码器:AAC, MP3, SPEEX, NELLYMOSER, ADPCM_SWF, G.711
 * OpenGL ES视频渲染
 * 全自动网络异常重连
 * 支持播放中途来电保持网络流，暂停播放，挂机后继续播放
-* 支持播放中途任意时刻截图
 * 支持设置最大缓冲时长,杜绝延迟累计
 * 支持多路直播流同时播放
+* RTSP支持的传输协议: TCP/UDP/UDP_MULTICAST/HTTP
+* RTSP支持海康Smart265
 
 ## 直播串流器
 v1.2.2新增NodeStreamer类,可用于户外环境下,具有RTSP协议的运动相机/无人机连接手机热点,通过手机4G网络串流到RTMP服务器.  
 手机端不进行编解码,只有网络IO,不占用CPU.注:当按Home或锁屏时,系统会禁止后台网络传输,该功能目前在iOS上不实用,只为了与[Android端](https://github.com/NodeMedia/NodeMediaClient-Android)功能保持一致.  
 v1.2.9增加对本地mp4文件直接进行串流的支持.(注意:并不进行二次编码,不改变码率\清晰度,不调整视频方向.手机内置相机录像的视频码率非常大,竖向录制的视频是旋转90度的)
 
-## ipv6
-苹果2016年6月新政策规定新上架app必须支持ipv6-only。经过验证，我们已发布的版本均支持ipv6地址或解析到ipv6地址的域名进行直播。可使用<s>下面的地址验证，（注：需要测试环境具有公网ipv6环境）</s> 已失效,请自行搭建监听IPV6地址的Nginx-Rtmp测试
- * <s>rtmp://[lssv6.nodemedia.cn]/live/demo</s>
- * <s>rtmp://[2001:19f0:7000:80b5:5400:00ff:fe27:3f9b]/live/demo</s>
-
 ## 视频点播
 ### v2.0.0版本开始支持视频点播
- * 支持的协议格式 HTTP/FILE
- * 支持的封装格式 MP4/FLV/AVI/MPEGTS
- * 支持的视频格式 H.264/H.263/FLV/MPEG4/MJPEG
+ * 支持的协议格式 HTTP/HTTPS/FILE
+ * 支持的封装格式 MP4/FLV/AVI/MPEGTS/MKV
+ * 支持的视频格式 H.264/H.263/FLV/MPEG4
  * 支持的音频格式 AAC/AC3/MP3/NELLYMOSER/SPEEX/G.711
  * 播放/暂停/快进/时长等基本操作
- * 视频编码:H.264/H.263/MPEG4,音频编码:AAC/AC3/MP3 支持硬解码  
+ * 视频编码:H.264/H.263/MPEG4支持硬解码  
  
 ![img](https://raw.githubusercontent.com/NodeMedia/NodeMediaClient-iOS/v2.x/vodplay.jpg)
 
 ## 开发计划
  * 接入VR播放
- * H.265直播传输
+ * H.265硬编码直播发布
  * 仿ActionScript3 NetConnect.call() 客户端服务端方法互调
  * 完善RTMFP协议支持(UDP,P2P,NETGROUP)
 
 ## H.265直播
-目前v2.1.3支持非Adobe官方协议下H.265直播播放  
-服务端需要修改codecId进行支持,NodeMedia将会在近期推出更新支持[nginx-rtmp-win32](https://github.com/illuspas/nginx-rtmp-win32)  
-推流端需要修改ffmpeg进行支持,NodeMedia将会在近期推出更新支持[ffmpeg-hw-win32](https://github.com/illuspas/ffmpeg-hw-win32)  
-目前暂不支持手机端推流,x265软编码性能消耗较大,解决方案为手机端仍然以H.264推送到服务端,服务端进行H.264-->H.265实时转码,播放端解码H.265视频.  
-经测试,在相同分辨率帧率清晰度的情况下,码率减小一半以上.  
-支持RTSP协议下海康摄像头Smart265的视频流
+目前v2.1.3之后的版本支持非Adobe官方协议下H.265直播播放  
+Windows测试服务端支持 
+ * [nginx-rtmp-win32](https://github.com/illuspas/nginx-rtmp-win32)  
+ * [Node-Media-Server](https://github.com/illuspas/Node-Media-Server)
+ 
+Windows硬编码推流端
+ * [ffmpeg-hw-win32](https://github.com/illuspas/ffmpeg-hw-win32)  
+ 
+目前暂不支持手机端推流,h.265软编码性能消耗较大,解决方案为手机端仍然以H.264推送到服务端,服务端进行H.264-->H.265实时转码,播放端解码H.265视频.  
+经测试,在相同分辨率帧率清晰度的情况下,码率减小一半以上. 
+iOS 11正式发布后，将适配HEVC硬编码传输.  
+
+## 跨平台开源流媒体服务端(开发测试用)
+[Node-Media-Server](https://github.com/illuspas/Node-Media-Server) 
+基于Node.JS开发, 跨平台/高性能, 支持RTMP协议推流,RTMP/HTTP-FLV/WebSocket-FLV播放, 内置推流鉴权/播放防盗链/GOP缓存急速秒开.
 
 ## 商用授权
 商业软件需购买授权,业务咨询\定制开发,请联系  
 QQ:281269007  
 Email:service@nodemedia.cn
-
-## 跨平台开源流媒体服务端(开发测试用)
-[Node-Media-Server](https://github.com/illuspas/Node-Media-Server) 
-基于Node.JS开发, 跨平台/高性能, 支持RTMP协议推流,RTMP/HTTP-FLV/WebSocket-FLV播放, 内置推流鉴权/播放防盗链/GOP缓存急速秒开.
