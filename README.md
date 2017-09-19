@@ -29,7 +29,7 @@ NodeMediaClient是为移动端应用量身打造的基于RTMP协议的流媒体�
 **iOS** armv7 armv7s arm64 i386 x86_64  
 
 ## 支持的流媒体服务端
-fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, Node-Media-Server及其他标准RTMP协议服务端
+fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, [Node-Media-Server](https://github.com/illuspas/Node-Media-Server) 及其他标准RTMP协议服务端
 
 ## 支持的流媒体云服务器
 [奥点云](http://www.aodianyun.com/)及其他标准RTMP协议云服务器
