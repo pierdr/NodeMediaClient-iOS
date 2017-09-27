@@ -34,7 +34,7 @@
     [_np setMaxBufferTime:[[DefConfig sharedInstance] getMaxBufferTime]];//设置缓冲区最大时长,该值与最大延迟有直接关系.因GOP缓冲\网络抖动\来电等因素引起的延迟,会根据该值的大小自动抛弃过期数据.建议1000-2000毫秒
     [_np setPlayerView:self.view];//设置视频播放视图
     [_np setContentMode:UIViewContentModeScaleAspectFit];//设置画面填充模式.
-    [_np setHwEnable:YES];//设置开启硬解码,默认已开启,可以不调用.系统版本不支持或硬解码器初始化失败,自动转为软解.
+//    [_np setHwEnable:YES];//设置开启硬解码,默认已开启,可以不调用.系统版本不支持或硬解码器初始化失败,自动转为软解.
 //    [_np setConnArgs:@"S:info O:1 NS:uid:10012 NB:vip:1 NN:num:209.12 O:0"]; //类似ActionScript NetConnection.connect()时发送参数,rtmpdump风格
 //    [_np setRtspTransport:RTSP_TRANSPORT_TCP]; //设置rtsp使用TCP传输
     [_np start];//开始播放

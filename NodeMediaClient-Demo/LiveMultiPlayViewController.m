@@ -26,6 +26,7 @@
     [_np1 setPlayerView:view1];
     [_np1 setInputUrl:@"rtmp://xyplay.nodemedia.cn/live/stream_1001"];
     [_np1 setNodePlayerDelegate:self];
+    [_np1 setContentMode:UIViewContentModeScaleAspectFit];
     [_np1 start];
     
     _np2 = [[NodePlayer alloc] init];
@@ -34,14 +35,16 @@
     [_np2 setPlayerView:view2];
     [_np2 setInputUrl:@"rtmp://xyplay.nodemedia.cn/live/stream_1002"];
     [_np2 setNodePlayerDelegate:self];
+    [_np2 setContentMode:UIViewContentModeScaleAspectFit];
     [_np2 start];
     
     _np3 = [[NodePlayer alloc] init];
     UIView *view3 = [[UIView alloc] initWithFrame:CGRectMake(200, 300, 90, 160)];
     [self.view addSubview:view3];
-    [_np2 setPlayerView:view3];
+    [_np3 setPlayerView:view3];
     [_np3 setInputUrl:@"rtmp://xyplay.nodemedia.cn/live/stream_1003"];
     [_np3 setNodePlayerDelegate:self];
+    [_np3 setContentMode:UIViewContentModeScaleAspectFit];
     [_np3 start];
     
     UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -65,7 +68,7 @@
 
 - (void) onEventCallback:(id)sender event:(int)event msg:(NSString *)msg {
     NSString *who = [sender isEqual:_np1] ? @"np1" : [sender isEqual:_np2] ? @"np2" : @"np3";
-    NSLog(@"[%@] onEventCallback:[%d] msg:%@",who,event,msg);
+    NSLog(@"%@ [%@] onEventCallback:[%d] msg:%@",sender,who,event,msg);
 }
 
 - (void)onClose:(id)sender {
