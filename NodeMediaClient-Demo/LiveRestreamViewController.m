@@ -29,6 +29,7 @@
     
     _ns = [[NodeStreamer alloc] init];
     [_ns  setNodeStreamerDelegate:self];
+    [_ns setRtspTransport:RTSP_TRANSPORT_TCP];
     _isStarting = false;
 }
 
@@ -76,14 +77,19 @@
                 //串流器输出端打开失败
                 break;
             case 3005:
-                //串流中途网络异常中断
+                //串流中途输入端网络异常中断
                 break;
             case 3006:
+                //串流中途输出端网络异常中断
+                break;
+            case 3007:
                 //串流结束
                 _isStarting = false;
                 [_startBtn setTitle:@"STREAMING" forState:UIControlStateNormal];
                 break;
-                
+            case 3008:
+                //码率信息回调: 总码率|视频码率|音频码率
+                break;
             default:
                 break;
         }
