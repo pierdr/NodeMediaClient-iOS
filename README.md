@@ -26,7 +26,7 @@ NodeMediaClient是为移动端应用量身打造的基于RTMP协议的流媒体�
 **iOS** 7.0及以上
 
 ## 支持的CPU架构
-**iOS** armv7 armv7s arm64 i386 x86_64  
+**iOS** armv7 arm64 i386 x86_64  
 
 ## 支持的流媒体服务端
 fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, [Node-Media-Server](https://github.com/illuspas/Node-Media-Server) 及其他标准RTMP协议服务端
@@ -70,7 +70,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, [Node-Media-Se
 ## 直播播放特性
 * 专为RTMP/RTSP等直播协议优化的码流解析器，极短的分析时间，秒开视频流
 * NEON指令集优化的软件解码器，性能好，兼容性强
-* 视频编码:H.264/H.263/MPEG4支持硬解码
+* 视频编码:H.265/H.264/H.263/MPEG4支持硬解码
 * 支持的网络协议 RTMP/RTMPT/RTMPE/RTSP/HLS/HTTP-FLV
 * 支持的视频解码器:H.264, FLV, VP6, MPEG4
 * 支持的音频解码器:AAC, MP3, SPEEX, NELLYMOSER, ADPCM_SWF, G.711
@@ -107,6 +107,7 @@ RTSP输入支持的传输协议: TCP/UDP/UDP_MULTICAST/HTTP
 
 ## H.265直播
 目前v2.1.3之后的版本支持非Adobe官方协议下H.265直播播放  
+iOS系统版本11，CPU型号A9(iphone6s代)及以上，可自动开启硬件解码。
 
 Windows测试服务端支持 
  * [nginx-rtmp-win32](https://github.com/illuspas/nginx-rtmp-win32)  
