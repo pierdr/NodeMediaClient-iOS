@@ -130,6 +130,9 @@ typedef void (^CapturePictureBlock)(UIImage * _Nullable image);
 ///设置音频参数
 -(void) setAudioParamBitrate:(int)bitrate profile:(int)profile;
 
+///设置音频参数
+-(void) setAudioParamBitrate:(int)bitrate profile:(int)profile sampleRate:(int)sampleRate;
+
 ///设置视频参数
 -(void) setVideoParamPreset:(VideoPreset)preset fps:(int)fps bitrate:(int)bitrate profile:(int)profile frontMirror:(BOOL)frontMirror;
 
