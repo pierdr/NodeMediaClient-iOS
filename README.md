@@ -6,6 +6,9 @@ http://git.oschina.net/illuspas/NodeMediaClient-iOS
 ## API 文档
 https://github.com/NodeMedia/NodeMediaClient-iOS/tree/2.x/docs
 
+## 直播工具
+http://www.nodemedia.cn/products/QLive/
+
 ## 简介
 NodeMediaClient是为移动端应用量身打造的基于RTMP协议的流媒体直播系统。通过集成本SDK，只需几个简单API调用，便可实现一套完整的直播流媒体应用基础。包含了流媒体应用中：『采集->编码->传输->解码->播放』的所有步骤。
 
