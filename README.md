@@ -104,19 +104,13 @@ RTSP输入支持的传输协议: TCP/UDP/UDP_MULTICAST/HTTP
  * 播放/暂停/快进/时长等基本操作
  * 视频编码:H.264/H.263/MPEG4支持硬解码  
  
-![img](https://raw.githubusercontent.com/NodeMedia/NodeMediaClient-iOS/v2.x/vodplay.jpg)
+![img](https://raw.githubusercontent.com/NodeMedia/NodeMediaClient-iOS/2.x/vodplay.jpg)
 
 ## MPEGTS over UDP
 v2.3.7之及之后的版本：
 当推流url为udp协议地址时, 如 udp://192.168.0.10:12345 则按照mpegts格式封装，udp传输。
 接收端可以是任何支持该协议的播放器，如vlc。
 如果推流ip地址是内网另外一台手机，则另一台手机只需用NodePlayer播放udp://127.0.0.1:12345即可，根据udp的特性，可随时打开关闭，再打开不中断，无需服务端
-
-## 开发计划
- * 接入VR播放
- * H.265硬编码直播发布
- * 仿ActionScript3 NetConnect.call() 客户端服务端方法互调
- * 完善RTMFP协议支持(UDP,P2P,NETGROUP)
 
 ## H.265直播
 目前v2.1.3之后的版本支持非Adobe官方协议下H.265直播播放  
@@ -132,6 +126,9 @@ Windows硬编码推流端
 目前暂不支持手机端推流,h.265软编码性能消耗较大,解决方案为手机端仍然以H.264推送到服务端,服务端进行H.264-->H.265实时转码,播放端解码H.265视频.  
 经测试,在相同分辨率帧率清晰度的情况下,码率减小一半以上. 
 iOS 11正式发布后，将适配HEVC硬编码传输.  
+
+## Bitcode支持
+v2.2.6及之后版本支持，开启后提交商店，经苹果后台优化，显著降低app尺寸。可参考，[快直播](https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1321792616),安装后只有5.7M。
 
 ## 跨平台开源流媒体服务端(开发测试用)
 [Node-Media-Server](https://github.com/illuspas/Node-Media-Server) 
