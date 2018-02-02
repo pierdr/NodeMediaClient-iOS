@@ -106,6 +106,12 @@ RTSP输入支持的传输协议: TCP/UDP/UDP_MULTICAST/HTTP
  
 ![img](https://raw.githubusercontent.com/NodeMedia/NodeMediaClient-iOS/v2.x/vodplay.jpg)
 
+## MPEGTS over UDP
+v2.3.7之及之后的版本：
+当推流url为udp协议地址时, 如 udp://192.168.0.10:12345 则按照mpegts格式封装，udp传输。
+接收端可以是任何支持该协议的播放器，如vlc。
+如果推流ip地址是内网另外一台手机，则另一台手机只需用NodePlayer播放udp://127.0.0.1:12345即可，根据udp的特性，可随时打开关闭，再打开不中断，无需服务端
+
 ## 开发计划
  * 接入VR播放
  * H.265硬编码直播发布
