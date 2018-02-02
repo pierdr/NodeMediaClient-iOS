@@ -106,12 +106,6 @@ RTSP输入支持的传输协议: TCP/UDP/UDP_MULTICAST/HTTP
  
 ![img](https://raw.githubusercontent.com/NodeMedia/NodeMediaClient-iOS/2.x/vodplay.jpg)
 
-## MPEGTS over UDP
-v2.3.7之及之后的版本：
-当推流url为udp协议地址时, 如 udp://192.168.0.10:12345 则按照mpegts格式封装，udp传输。
-接收端可以是任何支持该协议的播放器，如vlc。
-如果推流ip地址是内网另外一台手机，则另一台手机只需用NodePlayer播放udp://127.0.0.1:12345即可，根据udp的特性，可随时打开关闭，再打开不中断，无需服务端
-
 ## H.265直播
 目前v2.1.3之后的版本支持非Adobe官方协议下H.265直播播放  
 iOS系统版本11，CPU型号A9(iphone6s代)及以上，可自动开启硬件解码。
@@ -130,7 +124,13 @@ iOS 11正式发布后，将适配HEVC硬编码传输.
 ## Bitcode支持
 v2.2.6及之后版本支持，开启后提交商店，经苹果后台优化，显著降低app尺寸。可参考，[快直播](https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1321792616),安装后只有5.7M。
 
-## 跨平台开源流媒体服务端(开发测试用)
+## MPEGTS over UDP
+v2.3.7之及之后的版本：
+当推流url为udp协议地址时, 如 udp://192.168.0.10:12345 则按照mpegts格式封装，udp传输。
+接收端可以是任何支持该协议的播放器，如vlc。
+如果推流ip地址是内网另外一台手机，则另一台手机只需用NodePlayer播放udp://127.0.0.1:12345即可，根据udp的特性，可随时打开关闭，再打开不中断，无需服务端
+
+## 跨平台开源流媒体服务端
 [Node-Media-Server](https://github.com/illuspas/Node-Media-Server) 
 基于Node.JS开发, 跨平台/高性能, 支持RTMP协议推流,RTMP/HTTP-FLV/WebSocket-FLV播放, 内置推流鉴权/播放防盗链/GOP缓存急速秒开.
 
