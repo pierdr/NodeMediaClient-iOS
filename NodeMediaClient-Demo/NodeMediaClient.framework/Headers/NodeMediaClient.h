@@ -24,6 +24,7 @@
 // v2.3.3 - 2017/12/6
 // v2.3.4 - 2017/12/11
 // v2.3.5 - 2017/12/19
+// v2.3.6 - 2018/02/02
 //  Created by Mingliang Chen (illuspas@gmail.com) on 16/12/29.
 //  Copyright © 2017 NodeMedia. All rights reserved.
 //
