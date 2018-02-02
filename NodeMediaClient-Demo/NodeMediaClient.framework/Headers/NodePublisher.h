@@ -113,7 +113,7 @@ typedef void (^CapturePictureBlock)(UIImage * _Nullable image);
 @property (nonatomic, assign) BOOL denoiseEnable;
 
 ///是否开启回音消除,只在SPEEX编码下生效 (Acoustic Echo Cancellation)
-@property (nonatomic, assign) BOOL aecEnable;
+@property (nonatomic, assign) BOOL aecEnable DEPRECATED_ATTRIBUTE;
 
 ///是否开启动态码率调整
 @property (nonatomic, assign) BOOL dynamicRateEnable;
