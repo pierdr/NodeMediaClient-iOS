@@ -65,6 +65,10 @@ pod install
     [_np stopPreview];
     [_np stop];
 ```
+
+### 使用第三方相机推流
+https://github.com/NodeMedia/NodeMediaClient-iOS/wiki/使用第三方相机推流
+
 # 特性
 ## NodePlayer
 * 专为RTMP/RTSP等直播协议优化的码流解析器，极短的分析时间，秒开视频流
