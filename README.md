@@ -138,4 +138,6 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, [Node-Media-Se
 - 麦克风降噪
 - 平滑肌肤美颜
 
-请联系商务服务邮箱 : service@nodemedia.cn
+请联系商务服务  
+邮箱 : service@nodemedia.cn  
+QQ : 281269007
