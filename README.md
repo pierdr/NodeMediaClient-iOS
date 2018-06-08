@@ -15,7 +15,8 @@ pod install
 ```
 
 # 简单用法
-完整用例[QLive源码](https://github.com/NodeMedia/QLive-iOS) 
+完整用例[QLive源码](https://github.com/NodeMedia/QLive-iOS) [(API文档)](https://github.com/NodeMedia/NodeMediaClient-iOS/tree/2.x/docs)
+
 
 ## NodePlayer
 ```
