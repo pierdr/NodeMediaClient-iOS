@@ -79,7 +79,7 @@ Table of Contents
 开启硬件解码, 默认开启, 当初始化失败自动切为软解码.
 
 ### setAutoReconnectWaitTimeout
-设置自动重连等待时长. 单位毫秒, 默认值2000ms. 当设为0时不进行自动重连.
+设置自动重连等待时长. 单位毫秒, 默认值2000ms. 当设为-1时不进行自动重连.
 
 ### setConnectWaitTimeout
 设置连接等待超时时长, 单位毫秒,  默认值为0, 一直等待.
