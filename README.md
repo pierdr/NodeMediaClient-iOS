@@ -12,7 +12,7 @@ target 'QLive' do
   use_frameworks!
 
   # Pods for QLive
-  pod 'NodeMediaClient', '~> 2.4.6'
+  pod 'NodeMediaClient'
 end
 
 ```
