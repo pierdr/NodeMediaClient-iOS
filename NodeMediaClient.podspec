@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name          = 'NodeMediaClient'
-  s.version       = '2.4.7'
+  s.version       = '2.5.0'
   s.summary       = 'A simple, fast, free live streaming SDK.'
   s.license       = { :type => 'Copyright', :text => 'Copyright 2019 NodeMedia Ltd. All rights reserved.' }
   s.homepage      = 'http://www.nodemedia.cn'
