@@ -137,7 +137,6 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, [Node-Media-Se
 - 硬件加速的视频编码、解码器
 - 麦克风降噪
 - 平滑肌肤美颜
-- 视频秒开与累积延迟消除
 
 请联系商务服务  
 邮箱 : service@nodemedia.cn  
