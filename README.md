@@ -82,9 +82,9 @@ https://github.com/NodeMedia/NodeMediaClient-iOS/wiki/使用第三方相机推�
 * 专为RTMP/RTSP等直播协议优化的码流解析器，极短的分析时间，秒开视频流
 * NEON指令集优化的软件解码器，性能好，兼容性强
 * 视频编码:H.265/H.264/H.263/MPEG4支持硬解码
-* 支持的网络协议 RTMP/RTMPT/RTMPE/RTSP/HLS/HTTP(S)-FLV
-* 支持的视频解码器:H.264, H.265,FLV, VP6, MPEG4
-* 支持的音频解码器:AAC, MP3, SPEEX, NELLYMOSER, ADPCM_SWF, G.711
+* 支持的网络协议 RTMP/RTMPT/RTMPE/RTSP/HLS/HTTP(S)-FLV/KMP
+* 支持的视频解码器:H.264, H.265,
+* 支持的音频解码器:AAC, SPEEX, NELLYMOSER, G.711
 * OpenGL ES视频渲染
 * 全自动网络异常重连
 * 支持播放中途来电保持网络流，暂停播放，挂机后继续播放
