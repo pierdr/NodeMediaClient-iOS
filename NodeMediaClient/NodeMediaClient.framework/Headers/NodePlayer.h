@@ -106,6 +106,9 @@
 ///是否以subscribe模式播放视频
 @property (nonatomic) BOOL subscribe;
 
+///设置视频解密秘钥, 16字节
+@property (nonnull, nonatomic, strong) NSString *cryptoKey;
+
 #pragma mark 属性
 
 -(instancetype)initWithPremium:(NSString*)key;

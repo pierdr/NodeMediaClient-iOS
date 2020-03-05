@@ -81,5 +81,6 @@ pod install
 - Hardware acceleration video Decoder & Encoder
 - Microphone denoise
 - Smooth beautiful skin
+- rtmp/http-flv video and audio crypto
 
 Please contact business service email : service@nodemedia.cn

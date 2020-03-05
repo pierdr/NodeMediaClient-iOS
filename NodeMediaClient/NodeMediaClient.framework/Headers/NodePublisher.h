@@ -119,6 +119,9 @@ typedef void (^CapturePictureBlock)(UIImage * _Nullable image);
 ///视频关键帧间隔，单位为秒，默认为1
 @property (nonatomic, assign) NSUInteger keyFrameInterval;
 
+///设置视频加密秘钥, 16字节
+@property (nonnull, nonatomic, strong) NSString *cryptoKey;
+
 -(instancetype)initWithPremium:(NSString*)key;
 
 ///设置摄像头预览视图

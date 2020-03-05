@@ -21,10 +21,9 @@ Table of Contents
          * [setAudioEnable](#setaudioenable)
          * [setVideoEnable](#setvideoenable)
          * [setDenoiseEnable](#setdenoiseenable)
-         * [setAecEnable](#setaecenable)
          * [setDynamicRateEnable](#setdynamicrateenable)
          * [setKeyFrameInterval](#setkeyframeinterval)
-         * [setPublishType](#setpublishtype)
+         * [setCryptoKey](#setCryptoKey)
          * [setNodePublisherDelegate](#setnodepublisherdelegate)
       * [方法](#方法)
          * [switchCamera](#switchcamera)
@@ -108,21 +107,14 @@ Table of Contents
 ### setDenoiseEnable
 设置是否开启噪音抑制
 
-### setAecEnable
-设置是否开启回音消除
->当播放使用NodePlayer, 双方音频编码为SPEEX时有效
-
 ### setDynamicRateEnable
 设置是否开启动态码率调整
 
 ### setKeyFrameInterval
 设置视频关键帧间隔的帧数
 
-### setPublishType
-设置发布类型
-- PUBLISH_TYPE_LIVE
-- PUBLISH_TYPE_RECORD
-- PUBLISH_TYPE_APPEND
+### setCryptoKey
+设置视频加密秘钥, 16字节
 
 ### setNodePublisherDelegate
 设置[事件回调](事件回调)代理

@@ -18,13 +18,11 @@ Table of Contents
          * [setConnectWaitTimeout](#setconnectwaittimeout)
          * [setAudioEnable](#setaudioenable)
          * [setVideoEnable](#setvideoenable)
-         * [setReceiveAudio](#setreceiveaudio)
-         * [setReceiveVideo](#setreceivevideo)
          * [setSubscribe](#setsubscribe)
          * [setPlayerView](#setplayerview)
          * [setContentMode](#setcontentmode)
+         * [setCryptoKey](#setCryptoKey)
          * [setNodePlayerDelegate](#setnodeplayerdelegate)
-         * [setLocalRTMP](#setlocalrtmp)
       * [方法](#方法)
          * [start](#start)
          * [stop](#stop)
@@ -109,12 +107,11 @@ Table of Contents
 - (UIViewContentModeScaleAspectFit) [等比缩放]模式将整个视频等比例缩放后显示到给定区域,当显示区域与视频分辨率不一致时,画面仍然保持正常比例,但有黑边
 - (UIViewContentModeScaleAspectFill) [等比填充缩放]模式将整个视频等比例缩放后拉伸填充给定区域,当显示区域与视频分辨率不一致时,裁剪掉多余的视频画面,画面仍然保持正常比例,没有黑边,但视频会显示不完全
 
+### setCryptoKey
+设置视频解密秘钥, 16字节
+
 ### setNodePlayerDelegate
 设置事件回调代理.
-
-### setLocalRTMP
-设置是否开启本地RTMP服务进行播放, 去中心端, 用于局域网推流.
-
 
 ## 方法
 
