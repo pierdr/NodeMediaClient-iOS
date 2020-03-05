@@ -96,6 +96,7 @@ https://github.com/NodeMedia/NodeMediaClient-iOS/wiki/使用第三方相机推�
 * RTMP支持发送FCSubscribe命令，兼容国外Akamai, Edgecast , Limelight 等CDN
 * RTSP支持的传输协议: TCP/UDP/UDP_MULTICAST/HTTP
 * RTSP支持海康Smart265解码播放
+* 支持RTMP/HTTP-FLV视频解密播放
 
 ## NodePublisher
 * H.264/AAC 组合的RTMP协议音视频流发布
@@ -120,6 +121,7 @@ https://github.com/NodeMedia/NodeMediaClient-iOS/wiki/使用第三方相机推�
 * 支持GPU算法的镜头缩放,兼容性好
 * 全自动网络异常重连
 * 不依赖\不冲突GPUImage
+* 支持RTMP视频加密推流
 
 ## MPEGTS over UDP
 当推流url为udp协议地址时, 如 udp://192.168.0.10:12345 则按照mpegts格式封装，udp传输。
