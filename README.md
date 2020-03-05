@@ -131,7 +131,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs, [Node-Media-Se
 基于Node.JS开发, 跨平台/高性能, 支持RTMP协议推流,RTMP/HTTP-FLV/WebSocket-FLV播放, 内置推流鉴权/播放防盗链/GOP缓存急速秒开.
 
 # 直播视频加密解密
-v2.6.1增加RTMP实时视频加密解密功能, 只对音视频内容进行加密, 不改变传输协议.  
+v2.6.2增加RTMP实时视频加密解密功能, 只对音视频内容进行加密, 不改变传输协议.  
 不限流媒体服务端, 对现有架构无任何改动, 非常适合用作付费教育直播等场景.  
 即使被抓包分析到流地址, 仍然无法被ffmpeg等任何工具解密.  
 用户自定义密码, 可随时更换.
