@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
 
   s.name          = 'NodeMediaClient'
-  s.version       = '2.7.3'
-  s.summary       = 'A simple, fast, free live streaming SDK.'
+  s.version       = '2.7.4'
+  s.summary       = 'A live streaming SDK.'
   s.license       = { :type => 'Copyright', :text => 'Copyright 2020 NodeMedia Ltd. All rights reserved.' }
   s.homepage      = 'http://www.nodemedia.cn'
   s.author        = { 'Mingliang Chen' => 'illuspas@gmail.com' }
