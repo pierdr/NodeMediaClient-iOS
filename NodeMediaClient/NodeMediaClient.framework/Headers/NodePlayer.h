@@ -97,10 +97,10 @@
  */
 @property (nonatomic) BOOL hwEnable;
 
-///是否开启音频
+///是否开启音频 随时可以设置
 @property (nonatomic) BOOL audioEnable;
 
-///是否开启视频
+///是否开启视频 随时可以设置
 @property (nonatomic) BOOL videoEnable;
 
 ///是否以subscribe模式播放视频
