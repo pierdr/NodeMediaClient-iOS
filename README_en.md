@@ -12,7 +12,7 @@ target 'QLive' do
   use_modular_headers!
 
   # Pods for QLive
-  pod 'NodeMediaClient', '~> 2.8.0' 
+  pod 'NodeMediaClient', '~> 2.8.1' 
 end
 ```
 ## install
